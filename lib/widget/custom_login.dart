@@ -11,13 +11,13 @@ class CustomLogin extends StatelessWidget {
 
   const CustomLogin(
       {super.key,
-        required this.hintText,
-        required this.controller,
-        this.prefixIcon,
-        this.suffixIcon,
-        this.isObscureText = false,
-        required this.keyboardType,
-        this.validate});
+      required this.hintText,
+      required this.controller,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.isObscureText = false,
+      required this.keyboardType,
+      this.validate});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CustomLogin extends StatelessWidget {
       padding: const EdgeInsets.only(left: 15, right: 15),
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xffE3E0E0),
+          color: Colors.white30,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(style: BorderStyle.solid, color: Colors.black12),
         ),
