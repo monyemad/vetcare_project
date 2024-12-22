@@ -25,82 +25,111 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          const Text(
-            "Welcome to VetCare",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const CustomText(text: "Email:"),
-          const SizedBox(
-            height: 8,
-          ),
-          CustomLogin(
-            hintText: "Enter your email",
-            controller: email,
-            keyboardType: TextInputType.emailAddress,
-            prefixIcon: Icons.email_rounded,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const CustomText(text: "Password:"),
-          const SizedBox(
-            height: 8,
-          ),
-          CustomLogin(
-            hintText: "Enter your password",
-            controller: password,
-            keyboardType: TextInputType.visiblePassword,
-            prefixIcon: Icons.lock_rounded,
-            suffixIcon: IconButton(
-              icon: sec ? visableoff : visable,
-              onPressed: () {
-                setState(() {
-                  sec = !sec;
-                });
-              },
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          alignment: AlignmentDirectional.bottomCenter,
+          children: [
+            const Image(
+              image: AssetImage("assets/images/login.png"),
+              fit: BoxFit.cover,
             ),
-            isObscureText: sec,
-          ),
-          SizedBox(
-            height: 4,
-          ),
-          TextButton(
-              onPressed: () {},
-              child: Text(
-                "Forget password?",
-                style: TextStyle(
-                    color: Color(0xff00264A), fontWeight: FontWeight.bold),
-              )),
-          SizedBox(
-            height: 30,
-          ),
-          CustomButton(text: "Login", onPressed: () {}),
-          SizedBox(
-            height: 8,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "Don't have an account?",
+            Padding(
+              padding: const EdgeInsets.only(bottom: 100.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                    child: Row(
+                      children: [
+                        const Text(
+                          "Welcome to\n VetCare",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 28),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const CustomText(text: "Email:"),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  CustomLogin(
+                    hintText: "Enter your email",
+                    controller: email,
+                    keyboardType: TextInputType.emailAddress,
+                    prefixIcon: Icons.email_rounded,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const CustomText(text: "Password:"),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  CustomLogin(
+                    hintText: "Enter your password",
+                    controller: password,
+                    keyboardType: TextInputType.visiblePassword,
+                    prefixIcon: Icons.lock_rounded,
+                    suffixIcon: IconButton(
+                      icon: sec ? visableoff : visable,
+                      onPressed: () {
+                        setState(() {
+                          sec = !sec;
+                        });
+                      },
+                    ),
+                    isObscureText: sec,
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          children: [
+                            const Text(
+                              "Forget password?",
+                              style: TextStyle(
+                                  color: Colors.blueAccent,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      )),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  CustomButton(text: "LOGIN", onPressed: () {}),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Don't have an account?",
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Register Now',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffD11C1C)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Register Now',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Color(0xffD11C1C)),
-                ),
-              ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
