@@ -15,7 +15,11 @@ class _MyFirstPageState extends State<MyFirstPage> {
   void initState() {
     super.initState();
     Timer(
+<<<<<<< HEAD
       const Duration(seconds: 3),
+=======
+      const Duration(seconds: 2),
+>>>>>>> vetcare/main
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const LoginScreen()),
@@ -29,6 +33,7 @@ class _MyFirstPageState extends State<MyFirstPage> {
       body: Stack(
         children: [
           Container(
+<<<<<<< HEAD
             decoration: const BoxDecoration(
                 image: DecorationImage(
               image: AssetImage("assets/images/log.png"),
@@ -50,6 +55,12 @@ class _MyFirstPageState extends State<MyFirstPage> {
               )
                 ),
           ),
+=======
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/background.png"))),
+          )
+>>>>>>> vetcare/main
         ],
       ),
     );
