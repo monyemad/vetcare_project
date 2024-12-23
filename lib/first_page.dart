@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/login_page.dart';
 
-class MyFirstPage extends StatefulWidget {
-  const MyFirstPage({super.key});
+class FirstScreen extends StatefulWidget {
+  const FirstScreen({super.key});
 
   @override
-  State<MyFirstPage> createState() => _MyFirstPageState();
+  State<FirstScreen> createState() => _FirstScreenState();
 }
 
-class _MyFirstPageState extends State<MyFirstPage> {
+class _FirstScreenState extends State<FirstScreen> {
   @override
   void initState() {
     super.initState();
