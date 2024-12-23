@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/home_page.dart';
-import 'package:vetcare_project/widget/custom_button.dart';
-import 'package:vetcare_project/widget/custom_login.dart';
-import 'package:vetcare_project/widget/custom_text.dart';
+import 'package:vetcare_project/widget/buttons.dart/custom_button.dart';
+import 'package:vetcare_project/widget/login_and_formfield.dart/custom_login.dart';
+import 'package:vetcare_project/widget/login_and_formfield.dart/custom_text.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
