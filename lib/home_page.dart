@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vetcare_project/animal_page.dart';
 import 'package:vetcare_project/widget/custom_home_page.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -9,7 +10,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   final GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -21,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text(""),
-              accountEmail: Text(""),
+              accountName: const Text(""),
+              accountEmail: const Text(""),
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
                   child: Image.asset(
@@ -88,7 +88,6 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Container(
                   alignment: Alignment.topLeft,
-                  // padding: EdgeInsets.only(left: 40, bottom: bottom),
                   child: IconButton(
                     onPressed: () {
                       _globalKey.currentState?.openDrawer();
@@ -99,11 +98,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                CustomHome(onPressed: (){}, image: "assets/images/pets.gif", text: "Animal"),
-                SizedBox(height: 10,),
-                CustomHome(onPressed: (){}, image: "assets/images/food safety.gif", text: "Food safety"),
-                SizedBox(height: 10,),
-                CustomHome(onPressed: (){}, image: "assets/images/chats.gif", text: "Emergency case"),
+                CustomHome(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const AnimalScreen();
+                      }));
+                    },
+                    image: "assets/images/pets.gif",
+                    text: "Animal"),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomHome(
+                    onPressed: () {},
+                    image: "assets/images/food safety.gif",
+                    text: "Food safety"),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomHome(
+                    onPressed: () {},
+                    image: "assets/images/chats.gif",
+                    text: "Emergency case"),
               ],
             ),
           ),

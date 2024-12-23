@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vetcare_project/home_page.dart';
 import 'package:vetcare_project/widget/custom_button.dart';
 import 'package:vetcare_project/widget/custom_login.dart';
 import 'package:vetcare_project/widget/custom_text.dart';
@@ -39,11 +40,11 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 60.0),
                     child: Row(
                       children: [
-                        const Text(
+                        Text(
                           "Welcome to\n VetCare",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 28),
@@ -88,11 +89,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   TextButton(
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
                         child: Row(
                           children: [
-                            const Text(
+                            Text(
                               "Forget password?",
                               style: TextStyle(
                                   color: Colors.blueAccent,
@@ -104,7 +105,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  CustomButton(text: "LOGIN", onPressed: () {}),
+                  CustomButton(
+                      text: "LOGIN",
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const HomeScreen();
+                        }));
+                      }),
                   const SizedBox(
                     height: 8,
                   ),
