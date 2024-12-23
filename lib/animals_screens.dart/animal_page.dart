@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/animals_screens.dart/farm_animal_page.dart';
-import 'package:vetcare_project/animals_screens.dart/fish_animal_page.dart';
 import 'package:vetcare_project/animals_screens.dart/pets_animal_page.dart';
 import 'package:vetcare_project/animals_screens.dart/poultry_animal.dart';
 import 'package:vetcare_project/widget/custom_animal_page.dart';
@@ -62,12 +61,7 @@ class AnimalScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 200),
                     child: CustomAnimal(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const FishAnimalScreen();
-                          }));
-                        },
+                        onPressed: () {},
                         image: "assets/images/fish.gif",
                         text: "Fish"),
                   ),
