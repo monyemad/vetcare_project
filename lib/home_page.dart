@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/animals_screens.dart/animal_page.dart';
+import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/custom_home_page.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Divider(),
             ListTile(
               leading: const Icon(Icons.checklist_rounded),
-              title: const Text('Check list'),
+              title: Text(S.of(context).checkList),
               onTap: () {
                 // Navigator.push(context, MaterialPageRoute(builder: (context) {
                 //   return const ComplainScreen();
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Divider(),
             ListTile(
               leading: const Icon(Icons.settings),
-              title: const Text('Setting'),
+              title: Text(S.of(context).setting),
               onTap: () {
                 // Navigator.push(context, MaterialPageRoute(builder: (context) {
                 //   return const SettingScreen();
@@ -105,22 +106,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         return const AnimalScreen();
                       }));
                     },
-                    image: "assets/images/pets.gif",
-                    text: "Animal"),
+                    image: "assets/images/animal.gif",
+                    text: S.of(context).animal),
                 const SizedBox(
                   height: 10,
                 ),
                 CustomHome(
                     onPressed: () {},
                     image: "assets/images/food safety.gif",
-                    text: "Food safety"),
+                    text: S.of(context).food),
                 const SizedBox(
                   height: 10,
                 ),
                 CustomHome(
                     onPressed: () {},
                     image: "assets/images/chats.gif",
-                    text: "Emergency case"),
+                    text: S.of(context).emergencyCase),
               ],
             ),
           ),

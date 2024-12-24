@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vetcare_project/animals_screens.dart/farm_animal_page.dart';
 import 'package:vetcare_project/animals_screens.dart/pets_animal_page.dart';
 import 'package:vetcare_project/animals_screens.dart/poultry_animal.dart';
+import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/custom_animal_page.dart';
 
 class AnimalScreen extends StatelessWidget {
@@ -32,7 +33,7 @@ class AnimalScreen extends StatelessWidget {
                           }));
                         },
                         image: "assets/images/pets animals.gif",
-                        text: "Pets animal"),
+                        text: S.of(context).pet),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 200),
@@ -44,7 +45,7 @@ class AnimalScreen extends StatelessWidget {
                           }));
                         },
                         image: "assets/images/farm animals.gif",
-                        text: "Farm animal"),
+                        text: S.of(context).farm),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 200),
@@ -56,14 +57,14 @@ class AnimalScreen extends StatelessWidget {
                           }));
                         },
                         image: "assets/images/poultry.gif",
-                        text: "Poultry"),
+                        text: S.of(context).poultry),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 200),
                     child: CustomAnimal(
                         onPressed: () {},
                         image: "assets/images/fish.gif",
-                        text: "Fish"),
+                        text: S.of(context).fish),
                   ),
                 ],
               ),

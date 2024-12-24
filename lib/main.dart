@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
 import 'package:vetcare_project/first_page.dart';
 
 void main() {
@@ -11,18 +12,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      localizationsDelegates: [
+    return MaterialApp(
+      locale: const Locale("ar"),
+      localizationsDelegates: const [
+        S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
-        Locale('en'),
-        Locale('ar'),
-      ],
+      supportedLocales: S.delegate.supportedLocales,
+      // supportedLocales: [
+      //   Locale('en'),
+      //   Locale('ar'),
+      // ],
       debugShowCheckedModeBanner: false,
-      home: FirstScreen(),
+      home: const FirstScreen(),
     );
   }
 }

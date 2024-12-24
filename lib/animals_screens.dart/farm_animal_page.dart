@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/custom_pfpf.dart';
 
 class FarmAnimalScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class FarmAnimalScreen extends StatelessWidget {
           body: CustomPFPF(
               image1: "assets/images/farm.jpg",
               image2: "assets/images/farm animal.png",
-              text: "Farm Animals",
+              text: S.of(context).farms,
               onPressed1: () {},
               onPressed2: () {})),
     );
