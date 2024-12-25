@@ -9,10 +9,11 @@ class FoodSafetyScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Stack(
+          // alignment: Alignment.center,
           children: [
             const Image(
-              image: AssetImage("assets/images/food safety.png"),
-              fit: BoxFit.fill,
+              image: AssetImage("assets/images/bg.png"),
+              fit: BoxFit.cover,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -26,8 +27,8 @@ class FoodSafetyScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Container(
-                  height: 150,
-                  width: 150,
+                  height: 130,
+                  width: 130,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.grey[200]),
@@ -47,9 +48,8 @@ class FoodSafetyScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Container(
-                  height: 150,
-                  width: 150,
-                  padding: const EdgeInsets.only(right: 200),
+                  height: 110,
+                  width: 110,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.grey[200]),
@@ -69,9 +69,8 @@ class FoodSafetyScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Container(
-                  height: 150,
-                  width: 150,
-                  padding: const EdgeInsets.only(left: 200),
+                  height: 100,
+                  width: 100,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.grey[200]),
