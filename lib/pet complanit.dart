@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/generated/l10n.dart';
+import 'package:vetcare_project/widget/buttons.dart/custom_button.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_text.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_textformfield.dart';
 import 'package:vetcare_project/widget/radio_and_select.dart/custom_select.dart';
@@ -134,21 +135,7 @@ class _PetInformationFormState extends State<PetInformationForm> {
                 },
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // Submit the form
-                    print('Name: ${_nameController.text}');
-                    print('Address: ${_addressController.text}');
-                    print('Phone: ${_phoneController.text}');
-                    print('Location: ${_locationController.text}');
-                    print('Animal Type: $_selectedAnimalType');
-                    print('Animal Age: ${_animalAgeController.text}');
-                    print('Animal Weight: ${_animalWeightController.text}');
-                  }
-                },
-                child: const Text('Submit'),
-              ),
+              CustomButton(text: S.of(context).submit, onPressed: () {}),
             ],
           ),
         ),
