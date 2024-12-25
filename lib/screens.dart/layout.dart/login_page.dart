@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/generated/l10n.dart';
-import 'package:vetcare_project/home_page.dart';
+import 'package:vetcare_project/screens.dart/layout.dart/home_page.dart';
 import 'package:vetcare_project/main.dart';
 import 'package:vetcare_project/widget/buttons.dart/custom_button.dart';
 import 'package:vetcare_project/widget/custom_lang.dart';

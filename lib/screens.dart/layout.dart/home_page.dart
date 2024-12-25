@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vetcare_project/animals_screens.dart/animal_page.dart';
+import 'package:vetcare_project/screens.dart/animals_screens.dart/animal_page.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/custom_home_page.dart';
 

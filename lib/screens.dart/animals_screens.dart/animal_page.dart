@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vetcare_project/animals_screens.dart/farm_animal_page.dart';
-import 'package:vetcare_project/animals_screens.dart/pets_animal_page.dart';
-import 'package:vetcare_project/animals_screens.dart/poultry_animal.dart';
+import 'package:vetcare_project/screens.dart/animals_screens.dart/farm_animal_page.dart';
+import 'package:vetcare_project/screens.dart/animals_screens.dart/pets_animal_page.dart';
+import 'package:vetcare_project/screens.dart/animals_screens.dart/poultry_animal.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/custom_animal_page.dart';
 

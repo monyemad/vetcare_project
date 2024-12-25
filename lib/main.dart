@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:vetcare_project/pet%20complanit.dart';
+import 'package:vetcare_project/screens.dart/food_safety.dart/food_safety_page.dart';
+import 'package:vetcare_project/screens.dart/forms_screens.dart/pet%20complanit.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          home: const PetInformationForm(),
+          home: const FoodSafetyScreen(),
         );
       },
     );
