@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.recommend_rounded),
-              title: const Text('Recommendation'),
+              title: Text(S.of(context).reco),
               onTap: () {
                 // Navigator.push(context, MaterialPageRoute(builder: (context) {
                 //   return const SupportScreen();

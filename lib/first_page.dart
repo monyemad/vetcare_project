@@ -42,10 +42,12 @@ class _FirstScreenState extends State<FirstScreen> {
                 decoration: BoxDecoration(
                     // color: Colors.blue,
                     borderRadius: BorderRadius.circular(150)),
-                child: const CircleAvatar(
-                  radius: 100,
-                  backgroundColor: Colors.blue,
-                  backgroundImage: AssetImage("assets/images/vetcare.png"),
+                child: const Center(
+                  child: CircleAvatar(
+                    radius: 300,
+                    backgroundColor: Colors.blue,
+                    backgroundImage: AssetImage("assets/images/vetcare.png"),
+                  ),
                 )),
           ),
         ],

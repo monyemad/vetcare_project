@@ -68,5 +68,11 @@
     "tue":"Tuesday",
     "wed":"Wednesday",
     "thu":"Thursday",
-    "call":"Emergency Call"
+    "call":"Emergency Call",
+    "reco":"Recommendation",
+    "complaint":"Complaint",
+    "help":"For helping you faster\n please choose from these button",
+    "en":"English",
+    "ar":"Arabic",
+    "change":"Change Language"
 }

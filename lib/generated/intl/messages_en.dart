@@ -28,11 +28,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Address:"),
         "age": MessageLookupByLibrary.simpleMessage("Animal Age:"),
         "animal": MessageLookupByLibrary.simpleMessage("Animal"),
+        "ar": MessageLookupByLibrary.simpleMessage("Arabic"),
         "basic": MessageLookupByLibrary.simpleMessage("Basic info:"),
         "call": MessageLookupByLibrary.simpleMessage("Emergency Call"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "change": MessageLookupByLibrary.simpleMessage("Change Language"),
         "checkList": MessageLookupByLibrary.simpleMessage("Check list"),
         "clinic": MessageLookupByLibrary.simpleMessage("Visit in Clinic"),
+        "complaint": MessageLookupByLibrary.simpleMessage("Complaint"),
         "criteria":
             MessageLookupByLibrary.simpleMessage("Inspection Criteria:"),
         "daily": MessageLookupByLibrary.simpleMessage("Daily checklist"),
@@ -43,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentation": MessageLookupByLibrary.simpleMessage("Documentation"),
         "email": MessageLookupByLibrary.simpleMessage("Email:"),
         "emergencyCase": MessageLookupByLibrary.simpleMessage("Emergency Case"),
+        "en": MessageLookupByLibrary.simpleMessage("English"),
         "faq": MessageLookupByLibrary.simpleMessage("Food Safety FAQ"),
         "farm": MessageLookupByLibrary.simpleMessage("Farm animal"),
         "farms": MessageLookupByLibrary.simpleMessage("Farm Animals"),
@@ -53,6 +57,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "form": MessageLookupByLibrary.simpleMessage("Form"),
         "healthandSafety":
             MessageLookupByLibrary.simpleMessage("Health and Safety"),
+        "help": MessageLookupByLibrary.simpleMessage(
+            "For helping you faster\n please choose from these button"),
         "live": MessageLookupByLibrary.simpleMessage("Live chat"),
         "location": MessageLookupByLibrary.simpleMessage("Location:"),
         "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
@@ -71,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone": MessageLookupByLibrary.simpleMessage("Phone:"),
         "poultries": MessageLookupByLibrary.simpleMessage("Poultry Animals"),
         "poultry": MessageLookupByLibrary.simpleMessage("Poultry"),
+        "reco": MessageLookupByLibrary.simpleMessage("Recommendation"),
         "regester": MessageLookupByLibrary.simpleMessage("Regester now"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "riskAssessment":

@@ -7,26 +7,38 @@ void main() {
   runApp(const MyApp());
 }
 
+class LocaleNotifier extends ValueNotifier<Locale> {
+  LocaleNotifier(super.value);
+
+  void changeLocale(Locale locale) {
+    value = locale;
+    notifyListeners();
+  }
+}
+
+final localeNotifier = LocaleNotifier(const Locale('en'));
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: const Locale("ar"),
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      // supportedLocales: [
-      //   Locale('en'),
-      //   Locale('ar'),
-      // ],
-      debugShowCheckedModeBanner: false,
-      home: const FirstScreen(),
+    return ValueListenableBuilder<Locale>(
+      valueListenable: localeNotifier,
+      builder: (context, locale, _) {
+        return MaterialApp(
+          locale: locale,
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          debugShowCheckedModeBanner: false,
+          home: const FirstScreen(),
+        );
+      },
     );
   }
 }

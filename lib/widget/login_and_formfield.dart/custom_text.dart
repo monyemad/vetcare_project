@@ -9,7 +9,7 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.centerLeft,
+      alignment: isArabic() ? Alignment.centerRight : Alignment.centerLeft,
       padding: EdgeInsets.only(
           left: isArabic() ? 0 : 20, right: isArabic() ? 20 : 0),
       child: Text(

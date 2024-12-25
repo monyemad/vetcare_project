@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/home_page.dart';
+import 'package:vetcare_project/main.dart';
 import 'package:vetcare_project/widget/buttons.dart/custom_button.dart';
+import 'package:vetcare_project/widget/custom_lang.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_login.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_text.dart';
 
@@ -29,19 +31,39 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            const Image(
-              image: AssetImage("assets/images/login.png"),
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 100.0),
-              child: SingleChildScrollView(
+        body: SingleChildScrollView(
+          child: Stack(
+            alignment: AlignmentDirectional.bottomEnd,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 400.0),
+                child: Image(
+                  image: AssetImage("assets/images/login.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 200.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Container(
+                        alignment: Alignment.centerRight,
+                        padding: const EdgeInsets.only(right: 40),
+                        child: CustomLang(
+                            onPressed: () {
+                              localeNotifier.changeLocale(const Locale('en'));
+                            },
+                            function: () {
+                              localeNotifier.changeLocale(const Locale('ar'));
+                            },
+                            label: S.of(context).change,
+                            icon: Icons.translate_rounded,
+                            text2: S.of(context).ar,
+                            text1: S.of(context).en)),
+                    const SizedBox(
+                      height: 30,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 60.0),
                       child: Row(
@@ -138,8 +160,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

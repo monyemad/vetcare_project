@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vetcare_project/generated/l10n.dart';
+import 'package:intl/intl.dart';
 
 class CustomPFPF extends StatelessWidget {
   final String image1;
@@ -31,7 +33,7 @@ class CustomPFPF extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 82,
+              height: 80,
             ),
             Text(
               text,
@@ -67,22 +69,25 @@ class CustomPFPF extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 45.0),
+                  padding: EdgeInsets.only(
+                      left: isArabic() ? 0 : 45, right: isArabic() ? 45 : 0),
                   child: Column(
                     children: [
                       const SizedBox(
                         height: 80,
                       ),
-                      const Text(
-                        "For helping you faster\n please choose from these button",
-                        style: TextStyle(
+                      Text(
+                        S.of(context).help,
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                       const SizedBox(
                         height: 40,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 200.0),
+                        padding: EdgeInsets.only(
+                            right: isArabic() ? 0 : 200,
+                            left: isArabic() ? 200 : 0),
                         child: ElevatedButton(
                           onPressed: onPressed1,
                           style: ElevatedButton.styleFrom(
@@ -92,8 +97,8 @@ class CustomPFPF extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          child: const Text("Form",
-                              style: TextStyle(
+                          child: Text(S.of(context).form,
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold)),
@@ -101,7 +106,9 @@ class CustomPFPF extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       Padding(
-                        padding: const EdgeInsets.only(left: 150.0),
+                        padding: EdgeInsets.only(
+                            left: isArabic() ? 0 : 150,
+                            right: isArabic() ? 150 : 0),
                         child: ElevatedButton(
                           onPressed: onPressed2,
                           style: ElevatedButton.styleFrom(
@@ -111,9 +118,9 @@ class CustomPFPF extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          child: const Text(
-                            "Complaint",
-                            style: TextStyle(
+                          child: Text(
+                            S.of(context).complaint,
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
@@ -130,4 +137,8 @@ class CustomPFPF extends StatelessWidget {
       ],
     );
   }
+}
+
+bool isArabic() {
+  return Intl.getCurrentLocale() == "ar";
 }
