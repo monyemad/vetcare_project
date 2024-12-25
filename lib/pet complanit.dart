@@ -9,15 +9,6 @@ class _AnimalFormState extends State<AnimalForm> {
   final TextEditingController _ageController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
 
-  void _handleSubmit() {
-    String animalAge = _ageController.text;
-    String animalWeight = _weightController.text;
-
-    // Handle the form submission logic here
-    print("Animal Age: $animalAge");
-    print("Animal Weight: $animalWeight");
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +54,9 @@ class _AnimalFormState extends State<AnimalForm> {
             SizedBox(height: 24),
             Center(
               child: ElevatedButton(
-                onPressed: _handleSubmit,
+                onPressed: () {
+                  // Add functionality here if needed
+                },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   backgroundColor: Colors.blue,
@@ -83,4 +76,4 @@ class _AnimalFormState extends State<AnimalForm> {
 
 void main() => runApp(MaterialApp(
       home: AnimalForm(),
-    ));
+    ));
