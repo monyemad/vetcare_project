@@ -1,134 +1,158 @@
-import React, { useState } from 'react';
+import 'package:flutter/material.dart';
+import 'package:vetcare_project/generated/l10n.dart';
+import 'package:vetcare_project/widget/login_and_formfield.dart/custom_text.dart';
+import 'package:vetcare_project/widget/login_and_formfield.dart/custom_textformfield.dart';
+import 'package:vetcare_project/widget/radio_and_select.dart/custom_select.dart';
 
-const PetInformation = () => {
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
-  const [location, setLocation] = useState('');
-  const [animalType, setAnimalType] = useState('');
-  const [animalAge, setAnimalAge] = useState('');
-  const [animalWeight, setAnimalWeight] = useState('');
+class PetInformationForm extends StatefulWidget {
+  const PetInformationForm({super.key});
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log({
-      name,
-      address,
-      phone,
-      location,
-      animalType,
-      animalAge,
-      animalWeight,
-    });
-  };
+  @override
+  State<PetInformationForm> createState() => _PetInformationFormState();
+}
 
-  return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-3xl font-bold text-center mb-8">Pet Information</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <label className="text-lg font-bold" htmlFor="name">
-            Name:
-          </label>
-          <input
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your name"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-lg font-bold" htmlFor="address">
-            Address:
-          </label>
-          <input
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="address"
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            placeholder="Enter your address"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-lg font-bold" htmlFor="phone">
-            Phone:
-          </label>
-          <input
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="phone"
-            type="text"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="Enter your phone"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-lg font-bold" htmlFor="location">
-            Location:
-          </label>
-          <input
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="location"
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="Enter your location"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-lg font-bold" htmlFor="animalType">
-            Animal type:
-          </label>
-          <select
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="animalType"
-            value={animalType}
-            onChange={(e) => setAnimalType(e.target.value)}
-          >
-            <option value="">Select Animal Type</option>
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-lg font-bold" htmlFor="animalAge">
-            Animal age:
-          </label>
-          <input
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="animalAge"
-            type="text"
-            value={animalAge}
-            onChange={(e) => setAnimalAge(e.target.value)}
-            placeholder="Animal age"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-lg font-bold" htmlFor="animalWeight">
-            Animal weight:
-          </label>
-          <input
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            id="animalWeight"
-            type="text"
-            value={animalWeight}
-            onChange={(e) => setAnimalWeight(e.target.value)}
-            placeholder="Animal weight"
-          />
-        </div>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
-  );
-};
+class _PetInformationFormState extends State<PetInformationForm> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _addressController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _locationController = TextEditingController();
+  final _animalAgeController = TextEditingController();
+  final _animalWeightController = TextEditingController();
+  String? _selectedAnimalType;
 
-export default PetInformation;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "Pet Information",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              CustomText(text: S.of(context).name),
+              const SizedBox(
+                height: 8,
+              ),
+              CustomTextFormField(
+                hintText: S.of(context).yourName,
+                controller: _nameController,
+                keyboardType: TextInputType.name,
+                validate: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 10),
+              TextFormField(
+                controller: _addressController,
+                decoration: const InputDecoration(
+                  labelText: 'Address',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your address';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: _phoneController,
+                decoration: const InputDecoration(
+                  labelText: 'Phone',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your phone';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: _locationController,
+                decoration: const InputDecoration(
+                  labelText: 'Location',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your location';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
+              CustomSelect(
+                  onChanged: (val) {
+                    setState(() {
+                      _selectedAnimalType = val;
+                    });
+                  },
+                  items: ["Cat", "Dog", "Bird"],
+                  text: S.of(context).AnType,
+                  value: _selectedAnimalType),
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: _animalAgeController,
+                decoration: const InputDecoration(
+                  labelText: 'Animal Age',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your animal age';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: _animalWeightController,
+                decoration: const InputDecoration(
+                  labelText: 'Animal Weight',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your animal weight';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    // Submit the form
+                    print('Name: ${_nameController.text}');
+                    print('Address: ${_addressController.text}');
+                    print('Phone: ${_phoneController.text}');
+                    print('Location: ${_locationController.text}');
+                    print('Animal Type: $_selectedAnimalType');
+                    print('Animal Age: ${_animalAgeController.text}');
+                    print('Animal Weight: ${_animalWeightController.text}');
+                  }
+                },
+                child: const Text('Submit'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

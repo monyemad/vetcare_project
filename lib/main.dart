@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:vetcare_project/pet%20complanit.dart';
 import 'generated/l10n.dart';
 import 'package:vetcare_project/first_page.dart';
 
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          home: const FirstScreen(),
+          home: const PetInformationForm(),
         );
       },
     );
