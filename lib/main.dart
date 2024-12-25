@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:vetcare_project/pet%20complanit.dart';
 import 'generated/l10n.dart';
-import 'package:vetcare_project/first_page.dart';
 
 void main() {
   runApp(const MyApp());
