@@ -72,7 +72,7 @@
     "reco":"Recommendation",
     "complaint":"Complaint",
     "help":"For helping you faster\n please choose from these button",
-    "en":"English",
-    "ar":"Arabic",
-    "change":"Change Language"
+    "english":"English",
+    "arabic":"Arabic",
+    "changeLanguage":"Change Language"
 }

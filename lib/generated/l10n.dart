@@ -781,30 +781,30 @@ class S {
   }
 
   /// `English`
-  String get en {
+  String get english {
     return Intl.message(
       'English',
-      name: 'en',
+      name: 'english',
       desc: '',
       args: [],
     );
   }
 
   /// `Arabic`
-  String get ar {
+  String get arabic {
     return Intl.message(
       'Arabic',
-      name: 'ar',
+      name: 'arabic',
       desc: '',
       args: [],
     );
   }
 
   /// `Change Language`
-  String get change {
+  String get changeLanguage {
     return Intl.message(
       'Change Language',
-      name: 'change',
+      name: 'changeLanguage',
       desc: '',
       args: [],
     );

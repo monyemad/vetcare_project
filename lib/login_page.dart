@@ -57,10 +57,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             function: () {
                               localeNotifier.changeLocale(const Locale('ar'));
                             },
-                            label: S.of(context).change,
+                            label: S.of(context).changeLanguage,
                             icon: Icons.translate_rounded,
-                            text2: S.of(context).ar,
-                            text1: S.of(context).en)),
+                            text2: S.of(context).arabic,
+                            text1: S.of(context).english)),
                     const SizedBox(
                       height: 30,
                     ),
