@@ -11,8 +11,10 @@ class LocaleNotifier extends ValueNotifier<Locale> {
   LocaleNotifier(super.value);
 
   void changeLocale(Locale locale) {
-    value = locale;
-    notifyListeners();
+    if (value != locale) {
+      value = locale;
+      notifyListeners();
+    }
   }
 }
 
