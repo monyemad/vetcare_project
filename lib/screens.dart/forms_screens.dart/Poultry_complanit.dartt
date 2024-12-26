@@ -102,27 +102,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                 },
                 onSaved: (value) => _location = value!,
               ),
-              const SizedBox(height: 16),
-              DropdownButtonFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Animal Type',
-                  border: OutlineInputBorder(),
-                ),
-                items: const [
-                  DropdownMenuItem(child: Text('Chicken'), value: 'chicken'),
-                  DropdownMenuItem(child: Text('Duck'), value: 'duck'),
-                  DropdownMenuItem(child: Text('Goose'), value: 'goose'),
-                  DropdownMenuItem(child: Text('Turkey'), value: 'turkey'),
-                  DropdownMenuItem(child: Text('Other'), value: 'other'),
-                ],
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please select an animal type';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _animalType = value!,
-              ),
+           
               const SizedBox(height: 16),
               TextFormField(
                 decoration: const InputDecoration(
