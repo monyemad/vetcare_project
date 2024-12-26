@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:vetcare_project/screens.dart/animals_screens.dart/poultry_animal.dart';
+import 'package:vetcare_project/screens.dart/forms_screens.dart/Poultry_complanit.drat';
 import 'package:vetcare_project/screens.dart/layout.dart/first_page.dart';
 import 'generated/l10n.dart';
 
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          home: const FirstScreen(),
+          home: const PoultryInformationForm(),
         );
       },
     );
