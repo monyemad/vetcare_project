@@ -1,177 +1,233 @@
-import { useState } from 'react';
+import 'package:flutter/material.dart';
 
-interface Option {
-  value: string;
-  label: string;
+void main() {
+  runApp(const MyApp());
 }
 
-const complaintOptions: Option[] = [
-  { value: 'health-issue', label: 'Health Issue' },
-  { value: 'injury', label: 'Injury' },
-  { value: 'other', label: 'Other' },
-];
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-const healthStatusOptions: Option[] = [
-  { value: 'healthy', label: 'Healthy' },
-  { value: 'sick', label: 'Sick' },
-  { value: 'injured', label: 'Injured' },
-];
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Poultry Information Form',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const PoultryInformationForm(),
+    );
+  }
+}
 
-const PoultryInformationForm = () => {
-  const [name, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
-  const [location, setLocation] = useState('');
-  const [animalType, setAnimalType] = useState('');
-  const [animalAge, setAnimalAge] = useState('');
-  const [animalWeight, setAnimalWeight] = useState('');
-  const [complaintType, setComplaintType] = useState('');
-  const [healthStatus, setHealthStatus] = useState('');
+class Option {
+  final String value;
+  final String label;
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Handle form submission
-  };
+  const Option({required this.value, required this.label});
+}
 
-  return (
-    <div className="max-w-md mx-auto p-4 md:p-6 lg:p-8 bg-white rounded shadow-md">
-      <h2 className="text-lg font-bold mb-4">Poultry Information</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Name
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
-            type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">
-            Address
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="address"
-            type="text"
-            value={address}
-            onChange={(event) => setAddress(event.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
-            Phone
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="phone"
-            type="text"
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="location">
-            Location
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="location"
-            type="text"
-            value={location}
-            onChange={(event) => setLocation(event.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="animalType">
-            Animal Type
-          </label>
-          <select
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="animalType"
-            value={animalType}
-            onChange={(event) => setAnimalType(event.target.value)}
-          >
-            <option value="">Select animal type</option>
-            <option value="chicken">Chicken</option>
-            <option value="duck">Duck</option>
-            <option value="goose">Goose</option>
-            <option value="turkey">Turkey</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="animalAge">
-            Animal Age
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="animalAge"
-            type="text"
-            value={animalAge}
-            onChange={(event) => setAnimalAge(event.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="animalWeight">
-            Animal Weight
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="animalWeight"
-            type="text"
-            value={animalWeight}
-            onChange={(event) => setAnimalWeight(event.target.value)}
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="complaintType">
-            Complaint Type
-          </label>
-          <select
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="complaintType"
-            value={complaintType}
-            onChange={(event) => setComplaintType(event.target.value)}
-          >
-            <option value="">Select complaint type</option>
-            {complaintOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="healthStatus">
-            Health Status
-          </label>
-          <select
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="healthStatus"
-            value={healthStatus}
-            onChange={(event) => setHealthStatus(event.target.value)}
-          >
-            <option value="">Select health status</option>
-            {healthStatusOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
-  );
-};
+class PoultryInformationForm extends StatefulWidget {
+  const PoultryInformationForm({Key? key}) : super(key: key);
 
-export default PoultryInformationForm;
+  @override
+  State<PoultryInformationForm> createState() => _PoultryInformationFormState();
+}
+
+class _PoultryInformationFormState extends State<PoultryInformationForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  String _name = '';
+  String _address = '';
+  String _phone = '';
+  String _location = '';
+  String _animalType = '';
+  String _animalAge = '';
+  String _animalWeight = '';
+  String _complaintType = '';
+  String _healthStatus = '';
+
+  final List<Option> _complaintOptions = const [
+    Option(value: 'health-issue', label: 'Health Issue'),
+    Option(value: 'injury', label: 'Injury'),
+    Option(value: 'other', label: 'Other'),
+  ];
+
+  final List<Option> _healthStatusOptions = const [
+    Option(value: 'healthy', label: 'Healthy'),
+    Option(value: 'sick', label: 'Sick'),
+    Option(value: 'injured', label: 'Injured'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Poultry Information Form'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Name',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _name = value!,
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Address',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your address';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _address = value!,
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Phone',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your phone number';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _phone = value!,
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Location',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your location';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _location = value!,
+              ),
+              const SizedBox(height: 16),
+              DropdownButtonFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Animal Type',
+                  border: OutlineInputBorder(),
+                ),
+                items: const [
+                  DropdownMenuItem(child: Text('Chicken'), value: 'chicken'),
+                  DropdownMenuItem(child: Text('Duck'), value: 'duck'),
+                  DropdownMenuItem(child: Text('Goose'), value: 'goose'),
+                  DropdownMenuItem(child: Text('Turkey'), value: 'turkey'),
+                  DropdownMenuItem(child: Text('Other'), value: 'other'),
+                ],
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please select an animal type';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _animalType = value!,
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Animal Age',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter the animal age';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _animalAge = value!,
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Animal Weight',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter the animal weight';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _animalWeight = value!,
+              ),
+              const SizedBox(height: 16),
+              DropdownButtonFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Complaint Type',
+                  border: OutlineInputBorder(),
+                ),
+                items: _complaintOptions
+                    .map((option) => DropdownMenuItem(
+                          child: Text(option.label),
+                          value: option.value,
+                        ))
+                    .toList(),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please select a complaint type';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _complaintType = value!,
+              ),
+              const SizedBox(height: 16),
+              DropdownButtonFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Health Status',
+                  border: OutlineInputBorder(),
+                ),
+                items: _healthStatusOptions
+                    .map((option) => DropdownMenuItem(
+                          child: Text(option.label),
+                          value: option.value,
+                        ))
+                    .toList(),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please select a health status';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _healthStatus = value!,
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+                    // Handle form submission
+                  }
+                },
+                child: const Text('Submit'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
