@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/screens.dart/food_safety.dart/new_inspection_page.dart';
+import 'package:vetcare_project/screens.dart/food_safety.dart/upcoming_inspection_page.dart';
 import 'package:vetcare_project/widget/buttons.dart/custom_elevated_button.dart';
 
 class FoodInspectionScreen extends StatelessWidget {
@@ -25,7 +26,13 @@ class FoodInspectionScreen extends StatelessWidget {
                 height: 100,
               ),
               CustomElevatedButton(
-                  onPressed: () {}, text: S.of(context).upcome),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const UpcomingInspectionScreen();
+                    }));
+                  },
+                  text: S.of(context).upcome),
               const SizedBox(
                 height: 80,
               ),
