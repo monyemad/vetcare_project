@@ -44,19 +44,22 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
           key: _formKey,
           child: Column(
             children: [
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Name',
-                  border: OutlineInputBorder(),
+                    CustomText(text: S.of(context).name),
+                const SizedBox(
+                  height: 8,
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your name';
-                  }
-                  return null;
-                },
-                onSaved: (value) => _name = value!,
-              ),
+                CustomTextFormField(
+                  hintText: S.of(context).yourName,
+                  controller: _nameController,
+                  keyboardType: TextInputType.name,
+                  prefixIcon: Icons.person_rounded,
+                  validate: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    return null;
+                  },
+                ),
               const SizedBox(height: 16),
               TextFormField(
                 decoration: const InputDecoration(
