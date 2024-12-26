@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/buttons.dart/custom_elevated_button.dart';
-import 'package:vetcare_project/widget/login_and_formfield.dart/custom_text.dart';
+import 'package:vetcare_project/widget/login_and_formfield.dart/custom_field.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_textformfield.dart';
 import 'package:vetcare_project/widget/radio_and_select.dart/custom_select.dart';
 
 class PoultryInformationForm extends StatefulWidget {
-  const PoultryInformationForm({Key? key}) : super(key: key);
+  const PoultryInformationForm({super.key});
 
   @override
   State<PoultryInformationForm> createState() => _PoultryInformationFormState();
@@ -28,10 +28,9 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Form(
+    return SafeArea(
+      child: Scaffold(
+        body: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Column(
@@ -43,7 +42,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                 const SizedBox(
                   height: 20,
                 ),
-                CustomText(text: S.of(context).name),
+                CustomField(text: S.of(context).name),
                 const SizedBox(
                   height: 8,
                 ),
@@ -60,7 +59,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                   },
                 ),
                 const SizedBox(height: 16),
-                CustomText(text: S.of(context).address),
+                CustomField(text: S.of(context).address),
                 const SizedBox(
                   height: 8,
                 ),
@@ -77,7 +76,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                   },
                 ),
                 const SizedBox(height: 16),
-                CustomText(text: S.of(context).phone),
+                CustomField(text: S.of(context).phone),
                 const SizedBox(
                   height: 8,
                 ),
@@ -94,7 +93,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                   },
                 ),
                 const SizedBox(height: 16),
-                CustomText(text: S.of(context).location),
+                CustomField(text: S.of(context).location),
                 const SizedBox(
                   height: 8,
                 ),
@@ -111,7 +110,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                   },
                 ),
                 const SizedBox(height: 16),
-                CustomText(text: S.of(context).AnType),
+                CustomField(text: S.of(context).AnType),
                 const SizedBox(
                   height: 8,
                 ),
@@ -125,7 +124,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                     text: S.of(context).AnType,
                     value: animalType),
                 const SizedBox(height: 16),
-                CustomText(text: S.of(context).age),
+                CustomField(text: S.of(context).age),
                 const SizedBox(
                   height: 8,
                 ),
@@ -142,7 +141,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                   },
                 ),
                 const SizedBox(height: 16),
-                CustomText(text: S.of(context).weight),
+                CustomField(text: S.of(context).weight),
                 const SizedBox(
                   height: 8,
                 ),
@@ -159,6 +158,10 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                   },
                 ),
                 const SizedBox(height: 16),
+                const CustomField(text: "Complain Type:"),
+                const SizedBox(
+                  height: 8,
+                ),
                 CustomSelect(
                     onChanged: (val) {
                       setState(() {
@@ -166,9 +169,13 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                       });
                     },
                     items: const ["health-issue", "injury", "other"],
-                    text: "Complaint Type:",
+                    text: "Select your animal complaint type",
                     value: complaintType),
                 const SizedBox(height: 16),
+                const CustomField(text: "Health Status:"),
+                const SizedBox(
+                  height: 8,
+                ),
                 CustomSelect(
                     onChanged: (val) {
                       setState(() {
@@ -176,7 +183,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                       });
                     },
                     items: const ["healthy", "injured", "sick"],
-                    text: "Health Status:",
+                    text: "Select your animal health status",
                     value: healthStatus),
                 const SizedBox(height: 16),
                 CustomElevatedButton(

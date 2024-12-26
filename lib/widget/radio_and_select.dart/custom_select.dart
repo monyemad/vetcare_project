@@ -17,7 +17,7 @@ class CustomSelect extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8),
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
           color: Colors.grey[300],
           border: Border.all(style: BorderStyle.solid, color: Colors.black12),
