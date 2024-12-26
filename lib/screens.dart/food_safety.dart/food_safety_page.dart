@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vetcare_project/generated/l10n.dart';
+import 'package:vetcare_project/screens.dart/food_safety.dart/faq_page.dart';
+import 'package:vetcare_project/screens.dart/food_safety.dart/food_inspection_page.dart';
 
 class FoodSafetyScreen extends StatelessWidget {
   const FoodSafetyScreen({super.key});
@@ -9,11 +11,13 @@ class FoodSafetyScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Stack(
-          // alignment: Alignment.center,
+          alignment: Alignment.center,
           children: [
             const Image(
-              image: AssetImage("assets/images/bg.png"),
+              image: AssetImage("assets/images/food safety.png"),
               fit: BoxFit.cover,
+              height: 790,
+              width: 790,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -21,73 +25,118 @@ class FoodSafetyScreen extends StatelessWidget {
                 Text(
                   S.of(context).food,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 25),
+                      fontWeight: FontWeight.bold, fontSize: 30),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
-                Container(
-                  height: 130,
-                  width: 130,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey[200]),
-                  child: const Image(
-                    image: AssetImage("assets/images/food.png"),
-                    fit: BoxFit.cover,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const FoodInspectionScreen();
+                    }));
+                  },
+                  child: Container(
+                    height: 180,
+                    width: 180,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.grey[200]),
+                    child: const Image(
+                      image: AssetImage("assets/images/food.png"),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
-                  S.of(context).data,
-                  style: const TextStyle(fontSize: 25),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const FoodInspectionScreen();
+                    }));
+                  },
+                  child: Text(
+                    S.of(context).data,
+                    style: const TextStyle(fontSize: 25),
+                  ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
-                Container(
-                  height: 110,
-                  width: 110,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey[200]),
-                  child: const Image(
-                    image: AssetImage("assets/images/FAQ.png"),
-                    fit: BoxFit.cover,
+                Padding(
+                  padding: const EdgeInsets.only(right: 150.0),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const FAQScreen();
+                      }));
+                    },
+                    child: Container(
+                      height: 120,
+                      width: 120,
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.grey[200]),
+                      child: const Image(
+                        image: AssetImage("assets/images/FAQ.png"),
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
-                  S.of(context).faq,
-                  style: const TextStyle(fontSize: 25),
+                Padding(
+                  padding: const EdgeInsets.only(right: 150.0),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const FAQScreen();
+                      }));
+                    },
+                    child: Text(
+                      S.of(context).faq,
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey[200]),
-                  child: const Image(
-                    image: AssetImage("assets/images/checklist.png"),
-                    fit: BoxFit.cover,
+                Padding(
+                  padding: const EdgeInsets.only(left: 150.0),
+                  child: InkWell(
+                    child: Container(
+                      height: 120,
+                      width: 120,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.grey[200]),
+                      child: const Image(
+                        image: AssetImage("assets/images/checklist.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
-                  S.of(context).daily,
-                  style: const TextStyle(fontSize: 25),
-                ),
-                const SizedBox(
-                  height: 20,
+                Padding(
+                  padding: const EdgeInsets.only(left: 150.0),
+                  child: InkWell(
+                    child: Text(
+                      S.of(context).daily,
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ),
                 ),
               ],
             )

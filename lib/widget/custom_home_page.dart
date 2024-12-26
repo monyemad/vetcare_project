@@ -5,10 +5,11 @@ class CustomHome extends StatelessWidget {
   final String image;
   final String text;
 
-  const CustomHome({super.key,
-    required this.onPressed,
-    required this.image,
-    required this.text});
+  const CustomHome(
+      {super.key,
+      required this.onPressed,
+      required this.image,
+      required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -17,27 +18,18 @@ class CustomHome extends StatelessWidget {
       children: [
         InkWell(
           onTap: onPressed,
-          child:
-          CircleAvatar(
-            radius: 83,
-            backgroundColor: Colors.white60,
-            child: CircleAvatar(
-              radius: 80,
-              backgroundColor: Colors.white70,
-              child: CircleAvatar(
-                radius: 75,
-                backgroundImage:
-                AssetImage(image),
-                backgroundColor: Colors.white,
-              ),
-            ),
+          child: CircleAvatar(
+            radius: 75,
+            backgroundImage: AssetImage(image),
+            backgroundColor: Colors.white,
           ),
         ),
         TextButton(
           onPressed: onPressed,
           child: Text(
             text,
-            style: const TextStyle(fontSize: 20, color: Colors.black,fontWeight: FontWeight.bold),
+            style: const TextStyle(
+                fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
       ],
