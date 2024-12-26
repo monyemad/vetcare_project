@@ -1,10 +1,4 @@
 
-class Option {
-  final String value;
-  final String label;
-
-  const Option({required this.value, required this.label});
-}
 
 class PoultryInformationForm extends StatefulWidget {
   const PoultryInformationForm({Key? key}) : super(key: key);
@@ -20,11 +14,11 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
   String _address = '';
   String _phone = '';
   String _location = '';
-  String _animalType = '';
-  String _animalAge = '';
+  
+ 
   String _animalWeight = '';
   String _complaintType = '';
-  String _healthStatus = '';
+  
 
   final List<Option> _complaintOptions = const [
     Option(value: 'health-issue', label: 'Health Issue'),
