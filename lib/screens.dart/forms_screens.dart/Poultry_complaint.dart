@@ -35,9 +35,10 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Text(
-                  "Poultry Information Form",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                Text(
+                  S.of(context).poultryInfo,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 20,
@@ -121,7 +122,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                       });
                     },
                     items: const ["CHICKEN", "TURKEY", "DUCK"],
-                    text: S.of(context).AnType,
+                    text: S.of(context).selectAnimal,
                     value: animalType),
                 const SizedBox(height: 16),
                 CustomField(text: S.of(context).age),
@@ -158,7 +159,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                   },
                 ),
                 const SizedBox(height: 16),
-                const CustomField(text: "Complain Type:"),
+                CustomField(text: S.of(context).complainType),
                 const SizedBox(
                   height: 8,
                 ),
@@ -169,10 +170,10 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                       });
                     },
                     items: const ["health-issue", "injury", "other"],
-                    text: "Select your animal complaint type",
+                    text: S.of(context).selectComplain,
                     value: complaintType),
                 const SizedBox(height: 16),
-                const CustomField(text: "Health Status:"),
+                CustomField(text: S.of(context).healthStatus),
                 const SizedBox(
                   height: 8,
                 ),
@@ -183,7 +184,7 @@ class _PoultryInformationFormState extends State<PoultryInformationForm> {
                       });
                     },
                     items: const ["healthy", "injured", "sick"],
-                    text: "Select your animal health status",
+                    text: S.of(context).selectHealth,
                     value: healthStatus),
                 const SizedBox(height: 16),
                 CustomElevatedButton(

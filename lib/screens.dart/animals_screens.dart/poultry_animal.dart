@@ -32,7 +32,7 @@ class _PoultryAnimalScreenState extends State<PoultryAnimalScreen> {
         body: CustomPFPF(
             image1: "assets/images/poultry image.jpeg",
             image2: "assets/images/poultry.png",
-            text: S.of(context).poultries,
+            text: S.of(context).poultry,
             onPressed1: () {},
             onPressed2: () {}),
       ),

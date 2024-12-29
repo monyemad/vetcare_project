@@ -240,31 +240,31 @@ class S {
     );
   }
 
-  /// `Pets Animals`
-  String get pets {
+  /// `Pet Information Form`
+  String get petInfo {
     return Intl.message(
-      'Pets Animals',
-      name: 'pets',
+      'Pet Information Form',
+      name: 'petInfo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Farm Animals`
-  String get farms {
+  /// `Farm Information Form`
+  String get farmsInfo {
     return Intl.message(
-      'Farm Animals',
-      name: 'farms',
+      'Farm Information Form',
+      name: 'farmsInfo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Poultry Animals`
-  String get poultries {
+  /// `Poultry Information Form`
+  String get poultryInfo {
     return Intl.message(
-      'Poultry Animals',
-      name: 'poultries',
+      'Poultry Information Form',
+      name: 'poultryInfo',
       desc: '',
       args: [],
     );
@@ -805,6 +805,236 @@ class S {
     return Intl.message(
       'Change Language',
       name: 'changeLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complaint Type:`
+  String get complainType {
+    return Intl.message(
+      'Complaint Type:',
+      name: 'complainType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your animal complaint type`
+  String get selectComplain {
+    return Intl.message(
+      'Select your animal complaint type',
+      name: 'selectComplain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Health Status:`
+  String get healthStatus {
+    return Intl.message(
+      'Health Status:',
+      name: 'healthStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your animal health status`
+  String get selectHealth {
+    return Intl.message(
+      'Select your animal health status',
+      name: 'selectHealth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write your note here`
+  String get noteText {
+    return Intl.message(
+      'Write your note here',
+      name: 'noteText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q: What are the best practices for storing animal feed? \n\n A: Store feed in a cool, dry place, away from direct sunlight and moisture. Use sealed containers to prevent contamination from pests or mold. \n\n Q: How can I tell if the feed has gone bad? \n\n A: Check for unusual smells, discoloration, or mold growth. If you notice any of these signs, discard the feed immediately to avoid health risks. \n\n Q: How often should I clean the feeding equipment for farm animals? \n\n A: Clean feeding equipment daily to prevent the buildup of bacteria and mold. Regular cleaning helps maintain the health of your farm animals. \n\n Q: Is it safe to give leftover food scraps to farm animals? \n\n A: It’s generally not recommended to feed farm animals leftover food scraps, as they may contain harmful substances or lead to imbalanced nutrition. Stick to feed designed for each specific type of farm animal. \n\n Q: How do I ensure that poultry feed remains uncontaminated? \n\n A: Store poultry feed in sealed containers and keep it dry. Regularly clean feeders and ensure that water is fresh and uncontaminated. \n\n Q: What precautions should I take when feeding poultry? \n\n A: Avoid feeding moldy or spoiled feed, and clean feeding areas regularly to prevent diseases. Monitor your poultry’s health and adjust their diet as needed. \n\n Q: How should I store fish feed to maintain its quality? \n\n A: Store fish feed in a cool, dry place, ideally in an airtight container. This helps preserve the nutritional value and prevents spoilage. \n\n Q: What are the signs of overfeeding fish? \n\n A: Signs include cloudy water, uneaten food settling at the bottom, and increased algae growth. Overfeeding can lead to water contamination and harm the fish’s health. \n\n Q: What should I do if I suspect my animals have eaten contaminated food? \n\n A: Immediately stop feeding them the suspected food, clean all feeding equipment, and monitor the animals closely. Contact a veterinarian if any signs of illness appear. \n\n Q: How can I prevent cross-contamination when handling different types of feed? \n\n A: Use separate containers and utensils for different types of feed. Always wash your hands and equipment thoroughly after handling each type to avoid cross-contamination.`
+  String get QandA {
+    return Intl.message(
+      'Q: What are the best practices for storing animal feed? \n\n A: Store feed in a cool, dry place, away from direct sunlight and moisture. Use sealed containers to prevent contamination from pests or mold. \n\n Q: How can I tell if the feed has gone bad? \n\n A: Check for unusual smells, discoloration, or mold growth. If you notice any of these signs, discard the feed immediately to avoid health risks. \n\n Q: How often should I clean the feeding equipment for farm animals? \n\n A: Clean feeding equipment daily to prevent the buildup of bacteria and mold. Regular cleaning helps maintain the health of your farm animals. \n\n Q: Is it safe to give leftover food scraps to farm animals? \n\n A: It’s generally not recommended to feed farm animals leftover food scraps, as they may contain harmful substances or lead to imbalanced nutrition. Stick to feed designed for each specific type of farm animal. \n\n Q: How do I ensure that poultry feed remains uncontaminated? \n\n A: Store poultry feed in sealed containers and keep it dry. Regularly clean feeders and ensure that water is fresh and uncontaminated. \n\n Q: What precautions should I take when feeding poultry? \n\n A: Avoid feeding moldy or spoiled feed, and clean feeding areas regularly to prevent diseases. Monitor your poultry’s health and adjust their diet as needed. \n\n Q: How should I store fish feed to maintain its quality? \n\n A: Store fish feed in a cool, dry place, ideally in an airtight container. This helps preserve the nutritional value and prevents spoilage. \n\n Q: What are the signs of overfeeding fish? \n\n A: Signs include cloudy water, uneaten food settling at the bottom, and increased algae growth. Overfeeding can lead to water contamination and harm the fish’s health. \n\n Q: What should I do if I suspect my animals have eaten contaminated food? \n\n A: Immediately stop feeding them the suspected food, clean all feeding equipment, and monitor the animals closely. Contact a veterinarian if any signs of illness appear. \n\n Q: How can I prevent cross-contamination when handling different types of feed? \n\n A: Use separate containers and utensils for different types of feed. Always wash your hands and equipment thoroughly after handling each type to avoid cross-contamination.',
+      name: 'QandA',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clinic 1`
+  String get clinic1 {
+    return Intl.message(
+      'Clinic 1',
+      name: 'clinic1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clinic 2`
+  String get clinic2 {
+    return Intl.message(
+      'Clinic 2',
+      name: 'clinic2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cat`
+  String get cat {
+    return Intl.message(
+      'Cat',
+      name: 'cat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dog`
+  String get dog {
+    return Intl.message(
+      'Dog',
+      name: 'dog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bird`
+  String get bird {
+    return Intl.message(
+      'Bird',
+      name: 'bird',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cow`
+  String get cow {
+    return Intl.message(
+      'Cow',
+      name: 'cow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sheep`
+  String get sheep {
+    return Intl.message(
+      'Sheep',
+      name: 'sheep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Horse`
+  String get horse {
+    return Intl.message(
+      'Horse',
+      name: 'horse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email`
+  String get pleaseEmail {
+    return Intl.message(
+      'Please enter a valid email',
+      name: 'pleaseEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must not be empty`
+  String get pleasePssword {
+    return Intl.message(
+      'Password must not be empty',
+      name: 'pleasePssword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name must not be empty`
+  String get pleaseName {
+    return Intl.message(
+      'Name must not be empty',
+      name: 'pleaseName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Owner must not be empty`
+  String get pleaseOwner {
+    return Intl.message(
+      'Owner must not be empty',
+      name: 'pleaseOwner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address must not be empty`
+  String get pleaseAddress {
+    return Intl.message(
+      'Address must not be empty',
+      name: 'pleaseAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number must not be empty`
+  String get pleasePhone {
+    return Intl.message(
+      'Phone number must not be empty',
+      name: 'pleasePhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal weight must not be empty`
+  String get pleaseAnWeight {
+    return Intl.message(
+      'Animal weight must not be empty',
+      name: 'pleaseAnWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal age must not be empty`
+  String get pleaseAnAge {
+    return Intl.message(
+      'Animal age must not be empty',
+      name: 'pleaseAnAge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location must not be empty`
+  String get pleaseLocation {
+    return Intl.message(
+      'Location must not be empty',
+      name: 'pleaseLocation',
       desc: '',
       args: [],
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:vetcare_project/screens.dart/food_safety.dart/upcoming_inspection_page.dart';
 import 'package:vetcare_project/screens.dart/layout.dart/first_page.dart';
 import 'generated/l10n.dart';
 

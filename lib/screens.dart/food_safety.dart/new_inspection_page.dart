@@ -106,7 +106,7 @@ class _NewInspectionScreenState extends State<NewInspectionScreen> {
                 Container(
                   height: MediaQuery.of(context).size.height / 5,
                   child: CustomTextFormField(
-                    hintText: 'ex: write your note here',
+                    hintText: S.of(context).noteText,
                     controller: note,
                     keyboardType: TextInputType.text,
                     prefixIcon: Icons.pending_actions_rounded,

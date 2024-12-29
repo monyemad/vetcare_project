@@ -32,7 +32,7 @@ class _FarmAnimalScreenState extends State<FarmAnimalScreen> {
           body: CustomPFPF(
               image1: "assets/images/farm.jpg",
               image2: "assets/images/farm animal.png",
-              text: S.of(context).farms,
+              text: S.of(context).farm,
               onPressed1: () {},
               onPressed2: () {})),
     );

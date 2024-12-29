@@ -32,7 +32,7 @@ class _PetsAnimalScreenState extends State<PetsAnimalScreen> {
           body: CustomPFPF(
               image1: "assets/images/pets animal.png",
               image2: "assets/images/dogs.png",
-              text: S.of(context).pets,
+              text: S.of(context).pet,
               onPressed1: () {},
               onPressed2: () {})),
     );

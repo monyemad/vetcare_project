@@ -32,9 +32,10 @@ class _FarmInformationFormState extends State<FarmInformationForm> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Farm Information",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                Text(
+                  S.of(context).farmsInfo,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 15,
@@ -117,7 +118,13 @@ class _FarmInformationFormState extends State<FarmInformationForm> {
                         _selectedAnimalType = val;
                       });
                     },
-                    items: const ["Cow", "Buffalo", "Sheep", "Goat", "Other"],
+                    items: [
+                      S.of(context).cow,
+                      // "Buffalo",
+                      S.of(context).sheep,
+                      // "Goat",
+                      S.of(context).horse
+                    ],
                     text: S.of(context).selectAnimal,
                     value: _selectedAnimalType),
                 const SizedBox(height: 20),
