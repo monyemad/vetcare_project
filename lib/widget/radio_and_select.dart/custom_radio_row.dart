@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomRadio extends StatelessWidget {
+class CustomRadioRow extends StatelessWidget {
   final String text;
   final String title;
   final String value;
@@ -9,7 +9,7 @@ class CustomRadio extends StatelessWidget {
   final String title1;
   final String value1;
 
-  const CustomRadio({
+  const CustomRadioRow({
     super.key,
     required this.text,
     required this.title,

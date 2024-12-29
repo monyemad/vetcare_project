@@ -3,6 +3,7 @@ import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/buttons.dart/custom_button.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_text.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_textformfield.dart';
+import 'package:vetcare_project/widget/radio_and_select.dart/custom_radio_column.dart';
 import 'package:vetcare_project/widget/radio_and_select.dart/custom_select.dart';
 
 class NewInspectionScreen extends StatefulWidget {
@@ -44,7 +45,7 @@ class _NewInspectionScreenState extends State<NewInspectionScreen> {
                 ),
                 Container(
                   alignment: AlignmentDirectional.centerStart,
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   child: Text(
                     S.of(context).basic,
                     style: const TextStyle(
@@ -98,7 +99,24 @@ class _NewInspectionScreenState extends State<NewInspectionScreen> {
                 ),
 
                 // the criteria will be here but is it will be radio or smth else
-
+                CustomRadioColumn(
+                  text: S.of(context).criteria,
+                  title1: S.of(context).healthandSafety,
+                  value1: S.of(context).healthandSafety,
+                  groupValue: criteria,
+                  title2: S.of(context).operationalStandards,
+                  value2: S.of(context).operationalStandards,
+                  onChange: (value) {
+                    setState(() {
+                      criteria = value;
+                    });
+                  },
+                  title3: S.of(context).documentation,
+                  value3: S.of(context).documentation,
+                  title4: S.of(context).riskAssessment,
+                  value4: S.of(context).riskAssessment,
+                ),
+                const SizedBox(height: 20),
                 CustomText(text: S.of(context).notes),
                 const SizedBox(
                   height: 8,
