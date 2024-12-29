@@ -25,29 +25,41 @@ class FoodInspectionScreen extends StatelessWidget {
               const SizedBox(
                 height: 100,
               ),
-              CustomElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const UpcomingInspectionScreen();
-                    }));
-                  },
-                  text: S.of(context).upcome),
+              SizedBox(
+                height: 60,
+                width: 250,
+                child: CustomElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const UpcomingInspectionScreen();
+                      }));
+                    },
+                    text: S.of(context).upcome),
+              ),
               const SizedBox(
                 height: 80,
               ),
-              CustomElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const NewInspectionScreen();
-                    }));
-                  },
-                  text: S.of(context).newInspections),
+              SizedBox(
+                height: 60,
+                width: 250,
+                child: CustomElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const NewInspectionScreen();
+                      }));
+                    },
+                    text: S.of(context).newInspections),
+              ),
               const SizedBox(
                 height: 80,
               ),
-              CustomElevatedButton(onPressed: () {}, text: S.of(context).past),
+              SizedBox(
+                  height: 60,
+                  width: 250,
+                  child: CustomElevatedButton(
+                      onPressed: () {}, text: S.of(context).past)),
             ],
           ),
         ),
