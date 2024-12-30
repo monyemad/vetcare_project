@@ -88,3 +88,10 @@ class _ClinicBookingState extends State<ClinicBooking> {
     '3:30 PM',
     '4:00 PM',
   ];
+
+  String _selectedClinic = '';
+  String _selectedDay = '';
+  String _selectedTime = '';
+  String _patientName = '';
+  String _phoneNumber = '';
+  bool _isBooked = false;
