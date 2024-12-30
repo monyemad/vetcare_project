@@ -95,3 +95,35 @@ class _ClinicBookingState extends State<ClinicBooking> {
   String _patientName = '';
   String _phoneNumber = '';
   bool _isBooked = false;
+
+    void _handleBook() {
+    if (_selectedClinic.isNotEmpty &&
+        _selectedDay.isNotEmpty &&
+        _selectedTime.isNotEmpty &&
+        _patientName.isNotEmpty &&
+        _phoneNumber.isNotEmpty) {
+      final clinicIndex = _clinics.indexWhere((clinic) => clinic.name == _selectedClinic);
+      if (clinicIndex != -1) {
+        if (!_clinics[clinicIndex].bookings.any(
+          (booking) => booking.day == _selectedDay && booking.time == _selectedTime,
+        )) {
+          _clinics[clinicIndex].bookings.add(
+            Booking(
+              day: _selectedDay,
+              time: _selectedTime,
+              patientName: _patientName,
+              phoneNumber: _phoneNumber,
+            ),
+          );
+          setState(() {
+            _isBooked = true;
+          });
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('This appointment is already booked')),
+          );
+        }
+      }
+    }
+  }
+
