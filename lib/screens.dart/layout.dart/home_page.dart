@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 60.0),
+            padding: const EdgeInsets.only(bottom: 100.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     image: "assets/images/animal.gif",
                     text: S.of(context).animal),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 CustomHome(
                     onPressed: () {
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     image: "assets/images/food safety.gif",
                     text: S.of(context).food),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 CustomHome(
                     onPressed: () {},
