@@ -91,7 +91,7 @@ class _NewInspectionScreenState extends State<NewInspectionScreen> {
                         type = val;
                       });
                     },
-                    items: [],
+                    items: const [],
                     text: S.of(context).select,
                     value: type),
                 const SizedBox(
@@ -121,6 +121,7 @@ class _NewInspectionScreenState extends State<NewInspectionScreen> {
                 const SizedBox(
                   height: 8,
                 ),
+                // ignore: sized_box_for_whitespace
                 Container(
                   height: MediaQuery.of(context).size.height / 5,
                   child: CustomTextFormField(

@@ -1,24 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Live Chat',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LiveChat(),
-    );
-  }
-}
-
 class Message {
   String sender;
   String text;
@@ -28,7 +9,7 @@ class Message {
 }
 
 class LiveChat extends StatefulWidget {
-  const LiveChat({Key? key}) : super(key: key);
+  const LiveChat({super.key});
 
   @override
   State<LiveChat> createState() => _LiveChatState();
@@ -36,10 +17,22 @@ class LiveChat extends StatefulWidget {
 
 class _LiveChatState extends State<LiveChat> {
   final List<Message> _messages = [
-    Message(sender: 'veterinarian', text: 'Hello, how may I help you?', time: '3:05 pm'),
-    Message(sender: 'owner', text: 'My dog needs to be vaccinated, Is there any date available?', time: '3:06 pm'),
-    Message(sender: 'veterinarian', text: "Next Sunday at 9 o'clock, is it okay with you?", time: '3:07 pm'),
-    Message(sender: 'owner', text: 'Yes, I will be there, thanks for your help.', time: '3:08 pm'),
+    Message(
+        sender: 'veterinarian',
+        text: 'Hello, how may I help you?',
+        time: '3:05 pm'),
+    Message(
+        sender: 'owner',
+        text: 'My dog needs to be vaccinated, Is there any date available?',
+        time: '3:06 pm'),
+    Message(
+        sender: 'veterinarian',
+        text: "Next Sunday at 9 o'clock, is it okay with you?",
+        time: '3:07 pm'),
+    Message(
+        sender: 'owner',
+        text: 'Yes, I will be there, thanks for your help.',
+        time: '3:08 pm'),
   ];
 
   final TextEditingController _controller = TextEditingController();
@@ -47,7 +40,8 @@ class _LiveChatState extends State<LiveChat> {
   void _handleSendMessage() {
     if (_controller.text.trim() != '') {
       setState(() {
-        _messages.add(Message(sender: 'owner', text: _controller.text, time: '3:09 pm'));
+        _messages.add(
+            Message(sender: 'owner', text: _controller.text, time: '3:09 pm'));
       });
       _controller.clear();
     }
@@ -73,9 +67,10 @@ class _LiveChatState extends State<LiveChat> {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
-                          mainAxisAlignment: _messages[index].sender == 'veterinarian'
-                              ? MainAxisAlignment.start
-                              : MainAxisAlignment.end,
+                          mainAxisAlignment:
+                              _messages[index].sender == 'veterinarian'
+                                  ? MainAxisAlignment.start
+                                  : MainAxisAlignment.end,
                           children: [
                             Container(
                               padding: const EdgeInsets.all(8.0),
@@ -83,14 +78,16 @@ class _LiveChatState extends State<LiveChat> {
                                 color: _messages[index].sender == 'veterinarian'
                                     ? Colors.grey.shade100
                                     : Colors.blue.shade100,
-                                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(20)),
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(_messages[index].text),
                                   Text(_messages[index].time,
-                                      style: const TextStyle(fontSize: 10, color: Colors.grey)),
+                                      style: const TextStyle(
+                                          fontSize: 10, color: Colors.grey)),
                                 ],
                               ),
                             ),

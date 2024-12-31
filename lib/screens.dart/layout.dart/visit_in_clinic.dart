@@ -1,24 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Clinic Booking',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const ClinicBooking(),
-    );
-  }
-}
-
 class Clinic {
   String name;
   List<String> times;
@@ -42,7 +23,7 @@ class Booking {
 }
 
 class ClinicBooking extends StatefulWidget {
-  const ClinicBooking({Key? key}) : super(key: key);
+  const ClinicBooking({super.key});
 
   @override
   State<ClinicBooking> createState() => _ClinicBookingState();
@@ -96,25 +77,27 @@ class _ClinicBookingState extends State<ClinicBooking> {
   String _phoneNumber = '';
   bool _isBooked = false;
 
-    void _handleBook() {
+  void _handleBook() {
     if (_selectedClinic.isNotEmpty &&
         _selectedDay.isNotEmpty &&
         _selectedTime.isNotEmpty &&
         _patientName.isNotEmpty &&
         _phoneNumber.isNotEmpty) {
-      final clinicIndex = _clinics.indexWhere((clinic) => clinic.name == _selectedClinic);
+      final clinicIndex =
+          _clinics.indexWhere((clinic) => clinic.name == _selectedClinic);
       if (clinicIndex != -1) {
         if (!_clinics[clinicIndex].bookings.any(
-          (booking) => booking.day == _selectedDay && booking.time == _selectedTime,
-        )) {
+              (booking) =>
+                  booking.day == _selectedDay && booking.time == _selectedTime,
+            )) {
           _clinics[clinicIndex].bookings.add(
-            Booking(
-              day: _selectedDay,
-              time: _selectedTime,
-              patientName: _patientName,
-              phoneNumber: _phoneNumber,
-            ),
-          );
+                Booking(
+                  day: _selectedDay,
+                  time: _selectedTime,
+                  patientName: _patientName,
+                  phoneNumber: _phoneNumber,
+                ),
+              );
           setState(() {
             _isBooked = true;
           });
@@ -147,8 +130,8 @@ class _ClinicBookingState extends State<ClinicBooking> {
               },
               items: _clinics
                   .map((clinic) => DropdownMenuItem(
-                        child: Text(clinic.name),
                         value: clinic.name,
+                        child: Text(clinic.name),
                       ))
                   .toList(),
               decoration: const InputDecoration(
@@ -167,8 +150,8 @@ class _ClinicBookingState extends State<ClinicBooking> {
               },
               items: _days
                   .map((day) => DropdownMenuItem(
-                        child: Text(day),
                         value: day,
+                        child: Text(day),
                       ))
                   .toList(),
               decoration: const InputDecoration(
@@ -187,8 +170,8 @@ class _ClinicBookingState extends State<ClinicBooking> {
               },
               items: _hours
                   .map((hour) => DropdownMenuItem(
-                        child: Text(hour),
                         value: hour,
+                        child: Text(hour),
                       ))
                   .toList(),
               decoration: const InputDecoration(
@@ -265,7 +248,7 @@ class _ClinicBookingState extends State<ClinicBooking> {
             ),
           ],
         ),
-      ),
-    );
-  }
+      ),
+    );
+  }
 }
