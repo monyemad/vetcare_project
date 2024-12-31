@@ -26,21 +26,13 @@ class ClinicBooking extends StatefulWidget {
   const ClinicBooking({super.key});
 
   @override
-  State<ClinicBooking> createState() => _ClinicBookingState();
+  State<ClinicBooking> createState() => _ClinicBooking2State();
 }
 
-class _ClinicBookingState extends State<ClinicBooking> {
+class _ClinicBooking2State extends State<ClinicBooking> {
   final List<Clinic> _clinics = [
-    Clinic(
-      name: 'Clinic 1',
-      times: [],
-      bookings: [],
-    ),
-    Clinic(
-      name: 'Clinic 2',
-      times: [],
-      bookings: [],
-    ),
+    Clinic(name: 'Clinic 1', times: [], bookings: []),
+    Clinic(name: 'Clinic 2', times: [], bookings: []),
   ];
 
   final List<String> _days = [
@@ -48,7 +40,7 @@ class _ClinicBookingState extends State<ClinicBooking> {
     'Monday',
     'Tuesday',
     'Wednesday',
-    'Thursday',
+    'Thursday'
   ];
 
   final List<String> _hours = [
@@ -70,19 +62,26 @@ class _ClinicBookingState extends State<ClinicBooking> {
     '4:00 PM',
   ];
 
-  String _selectedClinic = '';
-  String _selectedDay = '';
-  String _selectedTime = '';
-  String _patientName = '';
-  String _phoneNumber = '';
+  String? _selectedClinic;
+  String? _selectedDay;
+  String? _selectedTime;
+  final TextEditingController _patientNameController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
   bool _isBooked = false;
 
+  @override
+  void dispose() {
+    _patientNameController.dispose();
+    _phoneNumberController.dispose();
+    super.dispose();
+  }
+
   void _handleBook() {
-    if (_selectedClinic.isNotEmpty &&
-        _selectedDay.isNotEmpty &&
-        _selectedTime.isNotEmpty &&
-        _patientName.isNotEmpty &&
-        _phoneNumber.isNotEmpty) {
+    if (_selectedClinic != null &&
+        _selectedDay != null &&
+        _selectedTime != null &&
+        _patientNameController.text.isNotEmpty &&
+        _phoneNumberController.text.isNotEmpty) {
       final clinicIndex =
           _clinics.indexWhere((clinic) => clinic.name == _selectedClinic);
       if (clinicIndex != -1) {
@@ -90,15 +89,15 @@ class _ClinicBookingState extends State<ClinicBooking> {
               (booking) =>
                   booking.day == _selectedDay && booking.time == _selectedTime,
             )) {
-          _clinics[clinicIndex].bookings.add(
-                Booking(
-                  day: _selectedDay,
-                  time: _selectedTime,
-                  patientName: _patientName,
-                  phoneNumber: _phoneNumber,
-                ),
-              );
           setState(() {
+            _clinics[clinicIndex].bookings.add(
+                  Booking(
+                    day: _selectedDay!,
+                    time: _selectedTime!,
+                    patientName: _patientNameController.text,
+                    phoneNumber: _phoneNumberController.text,
+                  ),
+                );
             _isBooked = true;
           });
         } else {
@@ -107,6 +106,10 @@ class _ClinicBookingState extends State<ClinicBooking> {
           );
         }
       }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please fill out all fields')),
+      );
     }
   }
 
@@ -120,11 +123,11 @@ class _ClinicBookingState extends State<ClinicBooking> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            DropdownButtonFormField(
+            DropdownButtonFormField<String>(
               value: _selectedClinic,
               onChanged: (value) {
                 setState(() {
-                  _selectedClinic = value as String;
+                  _selectedClinic = value;
                   _isBooked = false;
                 });
               },
@@ -140,11 +143,11 @@ class _ClinicBookingState extends State<ClinicBooking> {
               ),
             ),
             const SizedBox(height: 16),
-            DropdownButtonFormField(
+            DropdownButtonFormField<String>(
               value: _selectedDay,
               onChanged: (value) {
                 setState(() {
-                  _selectedDay = value as String;
+                  _selectedDay = value;
                   _isBooked = false;
                 });
               },
@@ -160,14 +163,15 @@ class _ClinicBookingState extends State<ClinicBooking> {
               ),
             ),
             const SizedBox(height: 16),
-            DropdownButtonFormField(
+            DropdownButtonFormField<String>(
               value: _selectedTime,
               onChanged: (value) {
                 setState(() {
-                  _selectedTime = value as String;
+                  _selectedTime = value;
                   _isBooked = false;
                 });
               },
+              menuMaxHeight: 200,
               items: _hours
                   .map((hour) => DropdownMenuItem(
                         value: hour,
@@ -181,13 +185,7 @@ class _ClinicBookingState extends State<ClinicBooking> {
             ),
             const SizedBox(height: 16),
             TextField(
-              controller: TextEditingController(text: _patientName),
-              onChanged: (value) {
-                setState(() {
-                  _patientName = value;
-                  _isBooked = false;
-                });
-              },
+              controller: _patientNameController,
               decoration: const InputDecoration(
                 labelText: 'Patient Name',
                 border: OutlineInputBorder(),
@@ -195,13 +193,7 @@ class _ClinicBookingState extends State<ClinicBooking> {
             ),
             const SizedBox(height: 16),
             TextField(
-              controller: TextEditingController(text: _phoneNumber),
-              onChanged: (value) {
-                setState(() {
-                  _phoneNumber = value;
-                  _isBooked = false;
-                });
-              },
+              controller: _phoneNumberController,
               decoration: const InputDecoration(
                 labelText: 'Phone Number',
                 border: OutlineInputBorder(),
@@ -221,8 +213,8 @@ class _ClinicBookingState extends State<ClinicBooking> {
                         Text('Clinic: $_selectedClinic'),
                         Text('Day: $_selectedDay'),
                         Text('Time: $_selectedTime'),
-                        Text('Patient Name: $_patientName'),
-                        Text('Phone Number: $_phoneNumber'),
+                        Text('Patient Name: ${_patientNameController.text}'),
+                        Text('Phone Number: ${_phoneNumberController.text}'),
                       ],
                     ),
                   )
@@ -235,13 +227,26 @@ class _ClinicBookingState extends State<ClinicBooking> {
               child: ListView.builder(
                 itemCount: _clinics.length,
                 itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Text(_clinics[index].name),
-                      ..._clinics[index].bookings.map((booking) => Text(
-                            'Day: ${booking.day}, Time: ${booking.time}, Patient Name: ${booking.patientName}, Phone Number: ${booking.phoneNumber}',
-                          )),
-                    ],
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          _clinics[index].name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        ..._clinics[index].bookings.map((booking) => Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 4.0),
+                              child: Text(
+                                'Day: ${booking.day}, Time: ${booking.time}, Patient Name: ${booking.patientName}, Phone: ${booking.phoneNumber}',
+                              ),
+                            )),
+                      ],
+                    ),
                   );
                 },
               ),

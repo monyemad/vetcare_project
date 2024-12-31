@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:vetcare_project/screens.dart/layout.dart/chat_live_test.dart';
 import 'package:vetcare_project/screens.dart/layout.dart/first_page.dart';
+import 'package:vetcare_project/screens.dart/layout.dart/visit_in_clinic.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          home: const FirstScreen(),
+          home: const ClinicBooking(),
         );
       },
     );

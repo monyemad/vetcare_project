@@ -23,7 +23,7 @@ class _LiveChatState extends State<LiveChat> {
         time: '3:05 pm'),
     Message(
         sender: 'owner',
-        text: 'My dog needs to be vaccinated, Is there any date available?',
+        text: 'My dog needs to be vaccinated,\nIs there any date available?',
         time: '3:06 pm'),
     Message(
         sender: 'veterinarian',
