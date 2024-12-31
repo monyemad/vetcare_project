@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CustomRadioColumn extends StatelessWidget {
   final String text;
@@ -34,8 +35,9 @@ class CustomRadioColumn extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          alignment: Alignment.topLeft,
-          padding: const EdgeInsets.only(left: 20),
+          alignment: isArabic() ? Alignment.topRight : Alignment.topLeft,
+          padding: EdgeInsets.only(
+              left: isArabic() ? 0 : 20, right: isArabic() ? 20 : 0),
           child: Text(
             text,
             style: const TextStyle(
@@ -50,7 +52,7 @@ class CustomRadioColumn extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -76,7 +78,7 @@ class CustomRadioColumn extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -102,7 +104,7 @@ class CustomRadioColumn extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -128,7 +130,7 @@ class CustomRadioColumn extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -150,4 +152,8 @@ class CustomRadioColumn extends StatelessWidget {
       ],
     );
   }
+}
+
+bool isArabic() {
+  return Intl.getCurrentLocale() == "ar";
 }

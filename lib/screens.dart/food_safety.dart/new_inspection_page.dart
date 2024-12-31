@@ -97,8 +97,6 @@ class _NewInspectionScreenState extends State<NewInspectionScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-
-                // the criteria will be here but is it will be radio or smth else
                 CustomRadioColumn(
                   text: S.of(context).criteria,
                   title1: S.of(context).healthandSafety,

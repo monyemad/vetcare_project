@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/screens.dart/layout.dart/home_page.dart';
 import 'package:vetcare_project/main.dart';
 import 'package:vetcare_project/widget/buttons.dart/custom_button.dart';
-import 'package:vetcare_project/widget/custom_lang.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_login.dart';
 import 'package:vetcare_project/widget/login_and_formfield.dart/custom_text.dart';
 
@@ -15,6 +15,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isArabic() {
+    return Intl.getCurrentLocale() == "ar";
+  }
+
   bool sec = true;
 
   var visable = const Icon(Icons.visibility_rounded);
@@ -48,19 +52,37 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                        alignment: Alignment.centerRight,
-                        padding: const EdgeInsets.only(right: 40),
-                        child: CustomLang(
+                      alignment: isArabic()
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
+                      padding: EdgeInsets.only(
+                          left: isArabic() ? 40 : 0,
+                          right: isArabic() ? 0 : 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.translate_rounded,
+                                color: Colors.blue, size: 30),
                             onPressed: () {
-                              localeNotifier.changeLocale(const Locale('en'));
+                              if (localeNotifier.value == const Locale('en')) {
+                                localeNotifier.changeLocale(const Locale('ar'));
+                              } else {
+                                localeNotifier.changeLocale(const Locale('en'));
+                              }
                             },
-                            function: () {
-                              localeNotifier.changeLocale(const Locale('ar'));
-                            },
-                            label: S.of(context).changeLanguage,
-                            icon: Icons.translate_rounded,
-                            text2: S.of(context).arabic,
-                            text1: S.of(context).english)),
+                          ),
+                          Text(
+                            localeNotifier.value == const Locale('en')
+                                ? 'English'
+                                : 'العربية',
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     const SizedBox(
                       height: 30,
                     ),
