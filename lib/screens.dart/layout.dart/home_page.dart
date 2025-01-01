@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vetcare_project/screens.dart/animals_screens.dart/animal_page.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/screens.dart/food_safety.dart/food_safety_page.dart';
+import 'package:vetcare_project/screens.dart/layout.dart/chat_live_test.dart';
 import 'package:vetcare_project/widget/custom_home_page.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -125,7 +126,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 15,
                 ),
                 CustomHome(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const LiveChat();
+                      }));
+                    },
                     image: "assets/images/chats.gif",
                     text: S.of(context).emergencyCase),
               ],
