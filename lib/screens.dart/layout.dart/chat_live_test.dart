@@ -1,47 +1,48 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Live Chat',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const LiveChat(),
+    );
+  }
+}
+
 class Message {
   String sender;
   String text;
-  String time;
+  String timestamp;
 
-  Message({required this.sender, required this.text, required this.time});
+  Message({required this.sender, required this.text, required this.timestamp});
 }
 
 class LiveChat extends StatefulWidget {
-  const LiveChat({super.key});
+  const LiveChat({Key? key}) : super(key: key);
 
   @override
   State<LiveChat> createState() => _LiveChatState();
 }
 
 class _LiveChatState extends State<LiveChat> {
-  final List<Message> _messages = [
-    Message(
-        sender: 'veterinarian',
-        text: 'Hello, how may I help you?',
-        time: '3:05 pm'),
-    Message(
-        sender: 'owner',
-        text: 'My dog needs to be vaccinated,\nIs there any date available?',
-        time: '3:06 pm'),
-    Message(
-        sender: 'veterinarian',
-        text: "Next Sunday at 9 o'clock, is it okay with you?",
-        time: '3:07 pm'),
-    Message(
-        sender: 'owner',
-        text: 'Yes, I will be there, thanks for your help.',
-        time: '3:08 pm'),
-  ];
-
+  final List<Message> _messages = [];
   final TextEditingController _controller = TextEditingController();
 
   void _handleSendMessage() {
     if (_controller.text.trim() != '') {
       setState(() {
         _messages.add(
-            Message(sender: 'owner', text: _controller.text, time: '3:09 pm'));
+            Message(sender: 'owner', text: _controller.text, timestamp: '3:09 pm'));
       });
       _controller.clear();
     }
@@ -50,6 +51,9 @@ class _LiveChatState extends State<LiveChat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('LIVE CHAT'),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -85,15 +89,12 @@ class _LiveChatState extends State<LiveChat> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(_messages[index].text),
-                                  Text(_messages[index].time,
+                                  Text(_messages[index].timestamp,
                                       style: const TextStyle(
                                           fontSize: 10, color: Colors.grey)),
                                 ],
                               ),
                             ),
-                            _messages[index].sender == 'veterinarian'
-                                ? const Icon(Icons.timer, size: 20)
-                                : const Icon(Icons.check, size: 20),
                           ],
                         ),
                       );
