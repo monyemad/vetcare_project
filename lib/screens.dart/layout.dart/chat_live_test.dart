@@ -1,23 +1,5 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Live Chat',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LiveChat(),
-    );
-  }
-}
+import 'package:vetcare_project/screens.dart/layout.dart/home_page.dart';
 
 class Message {
   String sender;
@@ -28,7 +10,7 @@ class Message {
 }
 
 class LiveChat extends StatefulWidget {
-  const LiveChat({Key? key}) : super(key: key);
+  const LiveChat({super.key});
 
   @override
   State<LiveChat> createState() => _LiveChatState();
@@ -38,11 +20,24 @@ class _LiveChatState extends State<LiveChat> {
   final List<Message> _messages = [];
   final TextEditingController _controller = TextEditingController();
 
+  String _formatTimeOfDay(TimeOfDay time) {
+    final hours = time.hourOfPeriod == 0 ? 12 : time.hourOfPeriod;
+    final period = time.period == DayPeriod.am ? "AM" : "PM";
+    final minutes = time.minute.toString().padLeft(2, '0');
+    return "$hours:$minutes $period";
+  }
+
   void _handleSendMessage() {
     if (_controller.text.trim() != '') {
       setState(() {
-        _messages.add(
-            Message(sender: 'owner', text: _controller.text, timestamp: '3:09 pm'));
+        final currentTime = TimeOfDay.now();
+        final formattedTime = _formatTimeOfDay(currentTime);
+
+        _messages.add(Message(
+          sender: 'owner',
+          text: _controller.text,
+          timestamp: formattedTime,
+        ));
       });
       _controller.clear();
     }
@@ -53,6 +48,13 @@ class _LiveChatState extends State<LiveChat> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('LIVE CHAT'),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context, MaterialPageRoute(builder: (context) {
+                return const HomeScreen();
+              }));
+            },
+            icon: const Icon(Icons.arrow_back_ios_new_rounded)),
       ),
       body: SafeArea(
         child: Padding(
@@ -76,23 +78,26 @@ class _LiveChatState extends State<LiveChat> {
                                   ? MainAxisAlignment.start
                                   : MainAxisAlignment.end,
                           children: [
-                            Container(
-                              padding: const EdgeInsets.all(8.0),
-                              decoration: BoxDecoration(
-                                color: _messages[index].sender == 'veterinarian'
-                                    ? Colors.grey.shade100
-                                    : Colors.blue.shade100,
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(20)),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(_messages[index].text),
-                                  Text(_messages[index].timestamp,
-                                      style: const TextStyle(
-                                          fontSize: 10, color: Colors.grey)),
-                                ],
+                            Flexible(
+                              child: Container(
+                                padding: const EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                  color:
+                                      _messages[index].sender == 'veterinarian'
+                                          ? Colors.grey.shade100
+                                          : Colors.blue.shade100,
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(20)),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(_messages[index].text),
+                                    Text(_messages[index].timestamp,
+                                        style: const TextStyle(
+                                            fontSize: 10, color: Colors.grey)),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -113,6 +118,7 @@ class _LiveChatState extends State<LiveChat> {
                           border: OutlineInputBorder(),
                           hintText: 'Type your message',
                         ),
+                        maxLines: 1,
                       ),
                     ),
                     const SizedBox(width: 8),
