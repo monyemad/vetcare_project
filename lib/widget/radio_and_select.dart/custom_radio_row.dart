@@ -48,7 +48,7 @@ class CustomRadioRow extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                           style: BorderStyle.solid, color: Colors.black12),
-                      color: Colors.white30),
+                      color: Colors.grey[300]),
                   child: RadioListTile(
                     contentPadding: const EdgeInsets.all(0.0),
                     title: Text(title),
@@ -70,7 +70,7 @@ class CustomRadioRow extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                           style: BorderStyle.solid, color: Colors.black12),
-                      color: Colors.white30),
+                      color: Colors.grey[300]),
                   child: RadioListTile(
                     contentPadding: const EdgeInsets.all(0.0),
                     title: Text(title1),

@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vetcare_project/screens.dart/animals_screens.dart/farm_animal_page.dart';
-import 'package:vetcare_project/screens.dart/animals_screens.dart/fish_animal_page.dart';
-import 'package:vetcare_project/screens.dart/animals_screens.dart/pets_animal_page.dart';
-import 'package:vetcare_project/screens.dart/animals_screens.dart/poultry_animal.dart';
 import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/widget/custom_animal_page.dart';
 
@@ -28,10 +24,10 @@ class AnimalScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 200),
                     child: CustomAnimal(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const PetsAnimalScreen();
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return const PetsAnimalScreen();
+                          // }));
                         },
                         image: "assets/images/pets animals.gif",
                         text: S.of(context).pet),
@@ -40,10 +36,10 @@ class AnimalScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 200),
                     child: CustomAnimal(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const FarmAnimalScreen();
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return const FarmAnimalScreen();
+                          // }));
                         },
                         image: "assets/images/farm animals.gif",
                         text: S.of(context).farm),
@@ -52,10 +48,10 @@ class AnimalScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 200),
                     child: CustomAnimal(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const PoultryAnimalScreen();
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return const PoultryAnimalScreen();
+                          // }));
                         },
                         image: "assets/images/poultry.gif",
                         text: S.of(context).poultry),
@@ -64,10 +60,10 @@ class AnimalScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 200),
                     child: CustomAnimal(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const FishAnimalScreen();
-                          }));
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return const FishAnimalScreen();
+                          // }));
                         },
                         image: "assets/images/fish.gif",
                         text: S.of(context).fish),

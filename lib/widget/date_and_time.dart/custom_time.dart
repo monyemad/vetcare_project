@@ -12,7 +12,7 @@ class CustomTime extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white30,
+          color: Colors.grey[300],
           borderRadius: BorderRadius.circular(20),
           border: Border.all(style: BorderStyle.solid, color: Colors.black12),
         ),
