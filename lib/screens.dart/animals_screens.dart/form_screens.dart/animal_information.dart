@@ -49,14 +49,23 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
 
   void _updateAnimalOptions(String selectedType) {
     setState(() {
-      _selectedAnimalType = null; // Reset the selected animal type
-      selectedAnimalSpecies = null; // Reset the selected species
-      speciesOptions = []; // Reset species options
+      _selectedAnimalType = null;
+      selectedAnimalSpecies = null;
+      speciesOptions = [];
 
-      if (selectedType == "Pet") {
-        animalOptions = ["Dog", "Cat", "Parrot"];
-      } else if (selectedType == "Farm") {
-        animalOptions = ["Cow", "Sheep", "Horse"];
+      if (selectedType == S.of(context).pet) {
+        animalOptions = [
+          S.of(context).dog,
+          S.of(context).cat,
+          S.of(context).bunny,
+          S.of(context).parrot
+        ];
+      } else if (selectedType == S.of(context).farm) {
+        animalOptions = [
+          S.of(context).cow,
+          S.of(context).sheep,
+          S.of(context).horse
+        ];
       } else {
         animalOptions = [];
       }
@@ -65,20 +74,85 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
 
   void _updateSpeciesOptions(String selectedAnimal) {
     setState(() {
-      selectedAnimalSpecies = null; // Reset the selected species
+      selectedAnimalSpecies = null;
 
-      if (selectedAnimal == "Dog") {
-        speciesOptions = ["Labrador", "Poodle"];
-      } else if (selectedAnimal == "Cat") {
-        speciesOptions = ["Persian", "Siamese"];
-      } else if (selectedAnimal == "Parrot") {
-        speciesOptions = ["Macaw", "Cockatiel"];
-      } else if (selectedAnimal == "Cow") {
-        speciesOptions = ["Dairy", "Beef"];
-      } else if (selectedAnimal == "Sheep") {
-        speciesOptions = ["Merino", "Dorper"];
-      } else if (selectedAnimal == "Horse") {
-        speciesOptions = ["Arabian", "Thoroughbred"];
+      if (selectedAnimal == S.of(context).dog) {
+        speciesOptions = [
+          S.of(context).labrador,
+          S.of(context).poodle,
+          S.of(context).germanShepherd,
+          S.of(context).husky,
+          S.of(context).golden,
+          S.of(context).bulldog,
+          S.of(context).boxer,
+          S.of(context).beagle,
+          S.of(context).dachshund,
+        ];
+      } else if (selectedAnimal == S.of(context).cat) {
+        speciesOptions = [
+          S.of(context).persian,
+          S.of(context).siamese,
+          S.of(context).maineCoon,
+          S.of(context).bengal,
+          S.of(context).scottishFold,
+          S.of(context).ragdoll,
+          S.of(context).sphynx,
+          S.of(context).britishShorthair,
+        ];
+      } else if (selectedAnimal == S.of(context).parrot) {
+        speciesOptions = [
+          S.of(context).macaw,
+          S.of(context).cockatiel,
+          S.of(context).africanGrey,
+          S.of(context).budgie,
+          S.of(context).canary,
+          S.of(context).amazonParrot,
+          S.of(context).lovebird,
+          S.of(context).eclectus,
+          S.of(context).quakerParrot,
+        ];
+      } else if (selectedAnimal == S.of(context).cow) {
+        speciesOptions = [
+          S.of(context).holsteinFriesian,
+          S.of(context).jersey,
+          S.of(context).guernsey,
+          S.of(context).ayrshire,
+          S.of(context).brownSwiss,
+          S.of(context).hereford,
+          S.of(context).charolais,
+          S.of(context).angus,
+        ];
+      } else if (selectedAnimal == S.of(context).sheep) {
+        speciesOptions = [
+          S.of(context).merino,
+          S.of(context).dorper,
+          S.of(context).suffolk,
+          S.of(context).dorset,
+          S.of(context).hampshire,
+          S.of(context).texel,
+          S.of(context).rambouillet
+        ];
+      } else if (selectedAnimal == S.of(context).horse) {
+        speciesOptions = [
+          S.of(context).arabian,
+          S.of(context).throughbred,
+          S.of(context).quarter,
+          S.of(context).appaloosa,
+          S.of(context).friesian,
+          S.of(context).clydesdale,
+          S.of(context).mustang,
+          S.of(context).andalusian,
+        ];
+      } else if (selectedAnimal == S.of(context).bunny) {
+        speciesOptions = [
+          S.of(context).netherlandDwarf,
+          S.of(context).flemishGiant,
+          S.of(context).lionhead,
+          S.of(context).hollandLop,
+          S.of(context).miniRex,
+          S.of(context).angora,
+          S.of(context).americanFuzzyLop,
+        ];
       } else {
         speciesOptions = [];
       }
@@ -95,9 +169,8 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Animal Information",
-                  // S.of(context).farmsInfo,
+                Text(
+                  S.of(context).animalInfo,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -114,7 +187,7 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                   prefixIcon: Icons.person_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your name';
+                      return S.of(context).pleaseName;
                     }
                     return null;
                   },
@@ -131,7 +204,7 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                   prefixIcon: Icons.house_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your address';
+                      return S.of(context).pleaseAddress;
                     }
                     return null;
                   },
@@ -148,33 +221,30 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                   prefixIcon: Icons.phone_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your phone';
+                      return S.of(context).pleasePhone;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomText(text: "Animal name:"
-                    // S.of(context).location
-                    ),
+                CustomText(text: S.of(context).animalName),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal name",
-                  // S.of(context).yourLocation,
+                  hintText: S.of(context).yourAnName,
                   controller: _animalNameController,
                   keyboardType: TextInputType.name,
                   prefixIcon: Icons.pets_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal name';
+                      return S.of(context).pleaseAnName;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomText(text: "Date of Birth"),
+                CustomText(text: S.of(context).dateOfBirth),
                 const SizedBox(height: 8),
                 CustomDate(
                   text: '${dateTime.day},${dateTime.month},${dateTime.year}',
@@ -182,12 +252,12 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                 ),
                 const SizedBox(height: 20),
                 CustomRadioRow(
-                    text: "Animal Gender",
-                    title: "Female",
-                    value: "Female",
+                    text: S.of(context).animalGender,
+                    title: S.of(context).female,
+                    value: S.of(context).female,
                     groupValue: animalGender,
-                    title1: "Male",
-                    value1: "Male",
+                    title1: S.of(context).male,
+                    value1: S.of(context).male,
                     onChange: (val) {
                       setState(() {
                         animalGender = val;
@@ -196,11 +266,11 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                 const SizedBox(height: 20),
                 CustomRadioRow(
                     text: S.of(context).AnType,
-                    title: "Pet",
-                    value: "Pet",
+                    title: S.of(context).pet,
+                    value: S.of(context).pet,
                     groupValue: animalType,
-                    title1: "Farm",
-                    value1: "Farm",
+                    title1: S.of(context).farm,
+                    value1: S.of(context).farm,
                     onChange: (val) {
                       setState(() {
                         animalType = val;
@@ -221,7 +291,7 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                     text: S.of(context).selectAnimal,
                     value: _selectedAnimalType),
                 const SizedBox(height: 10),
-                const CustomText(text: "Species:"),
+                CustomText(text: S.of(context).species),
                 const SizedBox(
                   height: 8,
                 ),
@@ -232,29 +302,29 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                       });
                     },
                     items: speciesOptions,
-                    text: "Select your animal species",
+                    text: S.of(context).selectSpecies,
                     value: selectedAnimalSpecies),
                 const SizedBox(
                   height: 15,
                 ),
-                if (animalType == "Farm") ...[
-                  const CustomText(text: "Location"),
+                if (animalType == S.of(context).farm) ...[
+                  CustomText(text: S.of(context).location),
                   const SizedBox(height: 8),
                   CustomTextFormField(
-                    hintText: "Enter your farm location",
+                    hintText: S.of(context).yourFarmLocation,
                     controller: _addressController,
                     keyboardType: TextInputType.streetAddress,
                     prefixIcon: Icons.location_on_rounded,
                     validate: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your farm location';
+                        return S.of(context).pleaseFarmLocation;
                       }
                       return null;
                     },
                   ),
                   const SizedBox(height: 20),
                 ],
-                const CustomText(text: "Service:"),
+                CustomText(text: S.of(context).service),
                 const SizedBox(
                   height: 8,
                 ),
@@ -264,13 +334,13 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                         selectedAnimalService = val;
                       });
                     },
-                    items: const [
-                      "boarding for animal",
-                      "vaccination",
-                      "surgery",
-                      "detection"
+                    items: [
+                      S.of(context).boarding,
+                      S.of(context).animalVaccination,
+                      S.of(context).surgery,
+                      S.of(context).detection,
                     ],
-                    text: "Select your animal service",
+                    text: S.of(context).selectService,
                     value: selectedAnimalService),
                 const SizedBox(
                   height: 20,
@@ -286,24 +356,24 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                   prefixIcon: Icons.perm_contact_calendar,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal age';
+                      return S.of(context).pleaseAnAge;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomText(text: "Animal height"),
+                CustomText(text: S.of(context).height),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal height",
+                  hintText: S.of(context).yourAnHeight,
                   controller: _animalHeightController,
                   keyboardType: TextInputType.number,
                   prefixIcon: Icons.height_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal height';
+                      return S.of(context).pleaseAnHeight;
                     }
                     return null;
                   },
@@ -320,7 +390,7 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
                   prefixIcon: Icons.monitor_weight_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal weight';
+                      return S.of(context).pleaseAnWeight;
                     }
                     return null;
                   },

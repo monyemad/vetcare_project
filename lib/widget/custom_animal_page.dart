@@ -17,10 +17,13 @@ class CustomAnimal extends StatelessWidget {
       children: [
         InkWell(
           onTap: onPressed,
-          child: CircleAvatar(
-            radius: 62,
-            backgroundImage: AssetImage(image),
-            backgroundColor: Colors.grey[200],
+          child: Container(
+            height: 140,
+            width: 140,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.grey[200]),
+            child: Image(image: AssetImage(image)),
           ),
         ),
         TextButton(

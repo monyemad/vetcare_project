@@ -85,7 +85,7 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                   prefixIcon: Icons.person_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your name';
+                      return S.of(context).pleaseOwner;
                     }
                     return null;
                   },
@@ -102,19 +102,19 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                   prefixIcon: Icons.phone_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your phone number';
+                      return S.of(context).pleasePhone;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
                 CustomRadioRow(
-                    text: "Type of Farm:",
-                    title: "Open system",
-                    value: "Open system",
+                    text: S.of(context).typeFarm,
+                    title: S.of(context).open,
+                    value: S.of(context).open,
                     groupValue: farmType,
-                    title1: "Closed system",
-                    value1: "Closed system",
+                    title1: S.of(context).closed,
+                    value1: S.of(context).closed,
                     onChange: (val) {
                       setState(() {
                         farmType = val;
@@ -123,7 +123,7 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const CustomField(text: "Farm Rearing System:"),
+                CustomField(text: S.of(context).farmRSystem),
                 const SizedBox(
                   height: 8,
                 ),
@@ -133,19 +133,24 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                         farmSystem = val;
                       });
                     },
-                    items: const ["Broiler", "Tayer", "Breeder"],
-                    text: "select your farm rearing system",
+                    items: [
+                      S.of(context).broiler,
+                      S.of(context).tayer,
+                      S.of(context).breeder
+                    ],
+                    text: S.of(context).selectFRS,
                     value: farmSystem),
                 const SizedBox(
                   height: 20,
                 ),
-                if (farmSystem == "Tayer" || farmSystem == "Breeder") ...[
+                if (farmSystem == S.of(context).tayer ||
+                    farmSystem == S.of(context).breeder) ...[
                   CustomRadio(
-                      title: "Cages",
-                      value: "Cages",
+                      title: S.of(context).cages,
+                      value: S.of(context).cages,
                       groupValue: selectedFarmSystem,
-                      title1: "Deep litter system",
-                      value1: "Deep litter system",
+                      title1: S.of(context).deepLS,
+                      value1: S.of(context).deepLS,
                       onChange: (val) {
                         setState(() {
                           selectedFarmSystem = val;
@@ -153,130 +158,130 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                       }),
                   const SizedBox(height: 15),
                 ],
-                const CustomField(text: "Farm Capacity:"),
+                CustomField(text: S.of(context).capacity),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your farm capacity",
+                  hintText: S.of(context).yourCapacity,
                   controller: capacity,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.reduce_capacity_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter farm capacity';
+                      return S.of(context).pleaseFarmCapacity;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomField(text: "Clincal signs:"),
+                CustomField(text: S.of(context).clinical),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal symptoms",
+                  hintText: S.of(context).yourAnClinical,
                   controller: clincal,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.signal_cellular_alt_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal symptoms';
+                      return S.of(context).pleaseAnSymptoms;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomField(text: "Mortality rate:"),
+                CustomField(text: S.of(context).mortality),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal mortality rate",
+                  hintText: S.of(context).yourAnMortality,
                   controller: mortality,
                   keyboardType: TextInputType.number,
                   prefixIcon: Icons.bar_chart_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal mortality rate';
+                      return S.of(context).pleaseMorality;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomField(text: "Mobidity rate:"),
+                CustomField(text: S.of(context).mobidity),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal mobidity rate",
+                  hintText: S.of(context).yourAnMobidity,
                   controller: morbidity,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.bar_chart_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal morbidity rate';
+                      return S.of(context).pleaseMobidity;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomField(text: "feed consumption:"),
+                CustomField(text: S.of(context).feed),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal feed consumption",
+                  hintText: S.of(context).yourAnFeed,
                   controller: feed,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.fastfood_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal feed consumption';
+                      return S.of(context).pleaseFeed;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomField(text: "Water consumption:"),
+                CustomField(text: S.of(context).water),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal water consumption",
+                  hintText: S.of(context).yourAnWater,
                   controller: water,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.water_drop_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal water consumption';
+                      return S.of(context).pleaseWater;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
                 CustomRadioRow(
-                    text: "Previous medication",
-                    title: "Yes",
-                    value: "Yes",
+                    text: S.of(context).medication,
+                    title: S.of(context).yes,
+                    value: S.of(context).yes,
                     groupValue: preveousMedication,
-                    title1: "No",
-                    value1: "No",
+                    title1: S.of(context).no,
+                    value1: S.of(context).no,
                     onChange: (val) {
                       setState(() {
                         preveousMedication = val;
                       });
                     }),
-                if (preveousMedication == "Yes") ...[
+                if (preveousMedication == S.of(context).yes) ...[
                   const SizedBox(height: 15),
                   CustomTextFormField(
-                    hintText: "Enter your animal previous medication",
+                    hintText: S.of(context).yourMediction,
                     controller: medication,
                     keyboardType: TextInputType.text,
                     prefixIcon: Icons.medication_rounded,
                     validate: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Animal previous medication must not be empty';
+                        return S.of(context).pleaseMedication;
                       }
                       return null;
                     },
@@ -284,18 +289,18 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                 ],
                 const SizedBox(height: 20),
                 CustomRadioRow(
-                    text: "Previous vaccination",
-                    title: "Yes",
-                    value: "Yes",
+                    text: S.of(context).vaccination,
+                    title: S.of(context).yes,
+                    value: S.of(context).yes,
                     groupValue: preveousVaccination,
-                    title1: "No",
-                    value1: "No",
+                    title1: S.of(context).no,
+                    value1: S.of(context).no,
                     onChange: (val) {
                       setState(() {
                         preveousVaccination = val;
                       });
                     }),
-                if (preveousVaccination == "Yes") ...[
+                if (preveousVaccination == S.of(context).yes) ...[
                   const SizedBox(height: 15),
                   CustomDate(
                     text: '${dateTime.day},${dateTime.month},${dateTime.year}',
@@ -303,18 +308,18 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                   ),
                 ],
                 const SizedBox(height: 20),
-                const CustomField(text: "Type of ration:"),
+                CustomField(text: S.of(context).ration),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter your animal ration",
+                  hintText: S.of(context).yourAnRation,
                   controller: ration,
                   keyboardType: TextInputType.text,
                   // prefixIcon: Icons.ramp_right_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your animal ration';
+                      return S.of(context).pleaseAnRation;
                     }
                     return null;
                   },
@@ -332,68 +337,68 @@ class _PoultryInformationScreenState extends State<PoultryInformationScreen> {
                         animalType = val;
                       });
                     },
-                    items: const [
-                      "Chicken",
-                      "Pigeon",
-                      "Duck",
-                      "Goose",
-                      "Turkey"
+                    items: [
+                      S.of(context).chicken,
+                      S.of(context).pigeon,
+                      S.of(context).duck,
+                      S.of(context).geese,
+                      S.of(context).turkey
                     ],
                     text: S.of(context).selectAnimal,
                     value: animalType),
                 const SizedBox(height: 20),
-                const CustomField(text: "Picture:"),
+                CustomField(text: S.of(context).picture),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomPicture(onPressed1: () {}, onPressed2: () {}),
                 const SizedBox(height: 20),
-                const CustomField(text: "Temperature/Humidity:"),
+                CustomField(text: S.of(context).temp),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter farm temperature",
+                  hintText: S.of(context).yourTemp,
                   controller: temp,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.thermostat_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter farm temperature';
+                      return S.of(context).pleaseTemp;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomField(text: "Lightening System:"),
+                CustomField(text: S.of(context).light),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter farm lightening system",
+                  hintText: S.of(context).yourLight,
                   controller: lightening,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.light_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter farm lightening system';
+                      return S.of(context).pleaseLight;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 20),
-                const CustomField(text: "Air flow:"),
+                CustomField(text: S.of(context).airFlow),
                 const SizedBox(
                   height: 8,
                 ),
                 CustomTextFormField(
-                  hintText: "Enter farm air flow",
+                  hintText: S.of(context).yourAir,
                   controller: airFlow,
                   keyboardType: TextInputType.text,
                   prefixIcon: Icons.wind_power_rounded,
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter farm air flow';
+                      return S.of(context).pleaseAir;
                     }
                     return null;
                   },

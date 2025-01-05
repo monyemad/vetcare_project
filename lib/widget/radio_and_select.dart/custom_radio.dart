@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CustomRadio extends StatelessWidget {
   final String title;
@@ -21,13 +22,15 @@ class CustomRadio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+          isArabic() ? CrossAxisAlignment.start : CrossAxisAlignment.end,
       children: [
         Row(
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 25, right: 4),
+                padding: EdgeInsets.only(
+                    left: isArabic() ? 0 : 25, right: isArabic() ? 25 : 0),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -49,7 +52,8 @@ class CustomRadio extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(right: 25),
+                padding: EdgeInsets.only(
+                    right: isArabic() ? 0 : 25, left: isArabic() ? 25 : 0),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -71,4 +75,8 @@ class CustomRadio extends StatelessWidget {
       ],
     );
   }
+}
+
+bool isArabic() {
+  return Intl.getCurrentLocale() == "ar";
 }

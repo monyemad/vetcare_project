@@ -240,6 +240,16 @@ class S {
     );
   }
 
+  /// `Animal Information form`
+  String get animalInfo {
+    return Intl.message(
+      'Animal Information form',
+      name: 'animalInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Pet Information Form`
   String get petInfo {
     return Intl.message(
@@ -270,10 +280,10 @@ class S {
     );
   }
 
-  /// `Owner:`
+  /// `Owner’s name:`
   String get owner {
     return Intl.message(
-      'Owner:',
+      'Owner’s name:',
       name: 'owner',
       desc: '',
       args: [],
@@ -350,6 +360,16 @@ class S {
     );
   }
 
+  /// `Enter your farm Location`
+  String get yourFarmLocation {
+    return Intl.message(
+      'Enter your farm Location',
+      name: 'yourFarmLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Animal Type:`
   String get AnType {
     return Intl.message(
@@ -360,10 +380,10 @@ class S {
     );
   }
 
-  /// `Select animal type`
+  /// `Select your animal type`
   String get selectAnimal {
     return Intl.message(
-      'Select animal type',
+      'Select your animal type',
       name: 'selectAnimal',
       desc: '',
       args: [],
@@ -405,6 +425,26 @@ class S {
     return Intl.message(
       'Enter your animal weight',
       name: 'yourAnWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal Height:`
+  String get height {
+    return Intl.message(
+      'Animal Height:',
+      name: 'height',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal height`
+  String get yourAnHeight {
+    return Intl.message(
+      'Enter your animal height',
+      name: 'yourAnHeight',
       desc: '',
       args: [],
     );
@@ -650,6 +690,16 @@ class S {
     );
   }
 
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Form`
   String get form {
     return Intl.message(
@@ -660,10 +710,10 @@ class S {
     );
   }
 
-  /// `Live chat`
+  /// `Live Chat`
   String get live {
     return Intl.message(
-      'Live chat',
+      'Live Chat',
       name: 'live',
       desc: '',
       args: [],
@@ -920,6 +970,16 @@ class S {
     );
   }
 
+  /// `Parrot`
+  String get parrot {
+    return Intl.message(
+      'Parrot',
+      name: 'parrot',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Cow`
   String get cow {
     return Intl.message(
@@ -950,6 +1010,1246 @@ class S {
     );
   }
 
+  /// `Golden Retriever`
+  String get golden {
+    return Intl.message(
+      'Golden Retriever',
+      name: 'golden',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Labrador Retriever`
+  String get labrador {
+    return Intl.message(
+      'Labrador Retriever',
+      name: 'labrador',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Poodle`
+  String get poodle {
+    return Intl.message(
+      'Poodle',
+      name: 'poodle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Persian`
+  String get persian {
+    return Intl.message(
+      'Persian',
+      name: 'persian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Siamese`
+  String get siamese {
+    return Intl.message(
+      'Siamese',
+      name: 'siamese',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Macaw`
+  String get macaw {
+    return Intl.message(
+      'Macaw',
+      name: 'macaw',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cockatiel`
+  String get cockatiel {
+    return Intl.message(
+      'Cockatiel',
+      name: 'cockatiel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabian`
+  String get arabian {
+    return Intl.message(
+      'Arabian',
+      name: 'arabian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Merino`
+  String get merino {
+    return Intl.message(
+      'Merino',
+      name: 'merino',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dorper`
+  String get dorper {
+    return Intl.message(
+      'Dorper',
+      name: 'dorper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Throughbred`
+  String get throughbred {
+    return Intl.message(
+      'Throughbred',
+      name: 'throughbred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chichen`
+  String get chicken {
+    return Intl.message(
+      'Chichen',
+      name: 'chicken',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pigeon`
+  String get pigeon {
+    return Intl.message(
+      'Pigeon',
+      name: 'pigeon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Duck`
+  String get duck {
+    return Intl.message(
+      'Duck',
+      name: 'duck',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Geese`
+  String get geese {
+    return Intl.message(
+      'Geese',
+      name: 'geese',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Turkey`
+  String get turkey {
+    return Intl.message(
+      'Turkey',
+      name: 'turkey',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lovebird`
+  String get lovebird {
+    return Intl.message(
+      'Lovebird',
+      name: 'lovebird',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Roborovski Hamster`
+  String get roborovski {
+    return Intl.message(
+      'Roborovski Hamster',
+      name: 'roborovski',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Winter White Russian Hamster`
+  String get winterWhite {
+    return Intl.message(
+      'Winter White Russian Hamster',
+      name: 'winterWhite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dwarf Campbell Russian Hamster`
+  String get dwarfCampbell {
+    return Intl.message(
+      'Dwarf Campbell Russian Hamster',
+      name: 'dwarfCampbell',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Syrian Hamster`
+  String get syrian {
+    return Intl.message(
+      'Syrian Hamster',
+      name: 'syrian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Husky`
+  String get husky {
+    return Intl.message(
+      'Husky',
+      name: 'husky',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Angus`
+  String get angus {
+    return Intl.message(
+      'Angus',
+      name: 'angus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clydesdale`
+  String get clydesdale {
+    return Intl.message(
+      'Clydesdale',
+      name: 'clydesdale',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friesian`
+  String get friesian {
+    return Intl.message(
+      'Friesian',
+      name: 'friesian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Appaloosa`
+  String get appaloosa {
+    return Intl.message(
+      'Appaloosa',
+      name: 'appaloosa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quarter Horse`
+  String get quarter {
+    return Intl.message(
+      'Quarter Horse',
+      name: 'quarter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rambouillet Sheep`
+  String get rambouillet {
+    return Intl.message(
+      'Rambouillet Sheep',
+      name: 'rambouillet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Texel Sheep`
+  String get texel {
+    return Intl.message(
+      'Texel Sheep',
+      name: 'texel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hampshire Sheep`
+  String get hampshire {
+    return Intl.message(
+      'Hampshire Sheep',
+      name: 'hampshire',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dorset Sheep`
+  String get dorset {
+    return Intl.message(
+      'Dorset Sheep',
+      name: 'dorset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Suffolk Sheep`
+  String get suffolk {
+    return Intl.message(
+      'Suffolk Sheep',
+      name: 'suffolk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Boxer`
+  String get boxer {
+    return Intl.message(
+      'Boxer',
+      name: 'boxer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `German Shepherd`
+  String get germanShepherd {
+    return Intl.message(
+      'German Shepherd',
+      name: 'germanShepherd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beagle`
+  String get beagle {
+    return Intl.message(
+      'Beagle',
+      name: 'beagle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dachshund`
+  String get dachshund {
+    return Intl.message(
+      'Dachshund',
+      name: 'dachshund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Panda Hamster`
+  String get panda {
+    return Intl.message(
+      'Panda Hamster',
+      name: 'panda',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Golden Hamster`
+  String get goldenHamster {
+    return Intl.message(
+      'Golden Hamster',
+      name: 'goldenHamster',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Teddy Bear Hamster`
+  String get teddyBear {
+    return Intl.message(
+      'Teddy Bear Hamster',
+      name: 'teddyBear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chinese Hamster`
+  String get chinese {
+    return Intl.message(
+      'Chinese Hamster',
+      name: 'chinese',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Domestic Canary`
+  String get canary {
+    return Intl.message(
+      'Domestic Canary',
+      name: 'canary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Charolais`
+  String get charolais {
+    return Intl.message(
+      'Charolais',
+      name: 'charolais',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hereford`
+  String get hereford {
+    return Intl.message(
+      'Hereford',
+      name: 'hereford',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Brown Swiss`
+  String get brownSwiss {
+    return Intl.message(
+      'Brown Swiss',
+      name: 'brownSwiss',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ayrshire`
+  String get ayrshire {
+    return Intl.message(
+      'Ayrshire',
+      name: 'ayrshire',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guernsey`
+  String get guernsey {
+    return Intl.message(
+      'Guernsey',
+      name: 'guernsey',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jersey`
+  String get jersey {
+    return Intl.message(
+      'Jersey',
+      name: 'jersey',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Netherland Dwarf`
+  String get netherlandDwarf {
+    return Intl.message(
+      'Netherland Dwarf',
+      name: 'netherlandDwarf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `British Shorthair`
+  String get britishShorthair {
+    return Intl.message(
+      'British Shorthair',
+      name: 'britishShorthair',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sphynx`
+  String get sphynx {
+    return Intl.message(
+      'Sphynx',
+      name: 'sphynx',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scottish Fold`
+  String get scottishFold {
+    return Intl.message(
+      'Scottish Fold',
+      name: 'scottishFold',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ragdoll`
+  String get ragdoll {
+    return Intl.message(
+      'Ragdoll',
+      name: 'ragdoll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bengal`
+  String get bengal {
+    return Intl.message(
+      'Bengal',
+      name: 'bengal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maine Coon`
+  String get maineCoon {
+    return Intl.message(
+      'Maine Coon',
+      name: 'maineCoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Flemish Giant`
+  String get flemishGiant {
+    return Intl.message(
+      'Flemish Giant',
+      name: 'flemishGiant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lionhead`
+  String get lionhead {
+    return Intl.message(
+      'Lionhead',
+      name: 'lionhead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Holland Lop`
+  String get hollandLop {
+    return Intl.message(
+      'Holland Lop',
+      name: 'hollandLop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mini Rex`
+  String get miniRex {
+    return Intl.message(
+      'Mini Rex',
+      name: 'miniRex',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Angora Rabbit`
+  String get angora {
+    return Intl.message(
+      'Angora Rabbit',
+      name: 'angora',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `American Fuzzy Lop`
+  String get americanFuzzyLop {
+    return Intl.message(
+      'American Fuzzy Lop',
+      name: 'americanFuzzyLop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Andalusian`
+  String get andalusian {
+    return Intl.message(
+      'Andalusian',
+      name: 'andalusian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mustang`
+  String get mustang {
+    return Intl.message(
+      'Mustang',
+      name: 'mustang',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Holstein Friesian`
+  String get holsteinFriesian {
+    return Intl.message(
+      'Holstein Friesian',
+      name: 'holsteinFriesian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Budgie`
+  String get budgie {
+    return Intl.message(
+      'Budgie',
+      name: 'budgie',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Eclectus Parrot`
+  String get eclectus {
+    return Intl.message(
+      'Eclectus Parrot',
+      name: 'eclectus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `African Grey`
+  String get africanGrey {
+    return Intl.message(
+      'African Grey',
+      name: 'africanGrey',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amazon Parrot`
+  String get amazonParrot {
+    return Intl.message(
+      'Amazon Parrot',
+      name: 'amazonParrot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quaker Parrot`
+  String get quakerParrot {
+    return Intl.message(
+      'Quaker Parrot',
+      name: 'quakerParrot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bulldog`
+  String get bulldog {
+    return Intl.message(
+      'Bulldog',
+      name: 'bulldog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animals Form`
+  String get animalForm {
+    return Intl.message(
+      'Animals Form',
+      name: 'animalForm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal name:`
+  String get animalName {
+    return Intl.message(
+      'Animal name:',
+      name: 'animalName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal name`
+  String get yourAnName {
+    return Intl.message(
+      'Enter your animal name',
+      name: 'yourAnName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of Birth:`
+  String get dateOfBirth {
+    return Intl.message(
+      'Date of Birth:',
+      name: 'dateOfBirth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal gender`
+  String get animalGender {
+    return Intl.message(
+      'Animal gender',
+      name: 'animalGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender:`
+  String get gender {
+    return Intl.message(
+      'Gender:',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message(
+      'Female',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message(
+      'Male',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message(
+      'No',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bunny`
+  String get bunny {
+    return Intl.message(
+      'Bunny',
+      name: 'bunny',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rabbit`
+  String get rabbit {
+    return Intl.message(
+      'Rabbit',
+      name: 'rabbit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Species:`
+  String get species {
+    return Intl.message(
+      'Species:',
+      name: 'species',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your animal species`
+  String get selectSpecies {
+    return Intl.message(
+      'Select your animal species',
+      name: 'selectSpecies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Service:`
+  String get service {
+    return Intl.message(
+      'Service:',
+      name: 'service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your animal service`
+  String get selectService {
+    return Intl.message(
+      'Select your animal service',
+      name: 'selectService',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Boarding for animal`
+  String get boarding {
+    return Intl.message(
+      'Boarding for animal',
+      name: 'boarding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal vaccination`
+  String get animalVaccination {
+    return Intl.message(
+      'Animal vaccination',
+      name: 'animalVaccination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surgery`
+  String get surgery {
+    return Intl.message(
+      'Surgery',
+      name: 'surgery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal detection`
+  String get detection {
+    return Intl.message(
+      'Animal detection',
+      name: 'detection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type of Farm:`
+  String get typeFarm {
+    return Intl.message(
+      'Type of Farm:',
+      name: 'typeFarm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open system`
+  String get open {
+    return Intl.message(
+      'Open system',
+      name: 'open',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Closed system`
+  String get closed {
+    return Intl.message(
+      'Closed system',
+      name: 'closed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farm Rearing System:`
+  String get farmRSystem {
+    return Intl.message(
+      'Farm Rearing System:',
+      name: 'farmRSystem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your farm rearing system`
+  String get selectFRS {
+    return Intl.message(
+      'Select your farm rearing system',
+      name: 'selectFRS',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Broiler`
+  String get broiler {
+    return Intl.message(
+      'Broiler',
+      name: 'broiler',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tayer`
+  String get tayer {
+    return Intl.message(
+      'Tayer',
+      name: 'tayer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Breeder`
+  String get breeder {
+    return Intl.message(
+      'Breeder',
+      name: 'breeder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cages`
+  String get cages {
+    return Intl.message(
+      'Cages',
+      name: 'cages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deep litter system`
+  String get deepLS {
+    return Intl.message(
+      'Deep litter system',
+      name: 'deepLS',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farm capacity:`
+  String get capacity {
+    return Intl.message(
+      'Farm capacity:',
+      name: 'capacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your farm capacity`
+  String get yourCapacity {
+    return Intl.message(
+      'Enter your farm capacity',
+      name: 'yourCapacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clinical signs:`
+  String get clinical {
+    return Intl.message(
+      'Clinical signs:',
+      name: 'clinical',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal symptoms`
+  String get yourAnClinical {
+    return Intl.message(
+      'Enter your animal symptoms',
+      name: 'yourAnClinical',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mortality rate:`
+  String get mortality {
+    return Intl.message(
+      'Mortality rate:',
+      name: 'mortality',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobidity rate:`
+  String get mobidity {
+    return Intl.message(
+      'Mobidity rate:',
+      name: 'mobidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal mortality rate`
+  String get yourAnMortality {
+    return Intl.message(
+      'Enter your animal mortality rate',
+      name: 'yourAnMortality',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal mobidity rate`
+  String get yourAnMobidity {
+    return Intl.message(
+      'Enter your animal mobidity rate',
+      name: 'yourAnMobidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feed coonsumption:`
+  String get feed {
+    return Intl.message(
+      'Feed coonsumption:',
+      name: 'feed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water consumption:`
+  String get water {
+    return Intl.message(
+      'Water consumption:',
+      name: 'water',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal feed consumption`
+  String get yourAnFeed {
+    return Intl.message(
+      'Enter your animal feed consumption',
+      name: 'yourAnFeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal water consumption`
+  String get yourAnWater {
+    return Intl.message(
+      'Enter your animal water consumption',
+      name: 'yourAnWater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous Medication:`
+  String get medication {
+    return Intl.message(
+      'Previous Medication:',
+      name: 'medication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous Vaccination:`
+  String get vaccination {
+    return Intl.message(
+      'Previous Vaccination:',
+      name: 'vaccination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your previous medication`
+  String get yourMediction {
+    return Intl.message(
+      'Enter your previous medication',
+      name: 'yourMediction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type of ration:`
+  String get ration {
+    return Intl.message(
+      'Type of ration:',
+      name: 'ration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal ration`
+  String get yourAnRation {
+    return Intl.message(
+      'Enter your animal ration',
+      name: 'yourAnRation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Picture:`
+  String get picture {
+    return Intl.message(
+      'Picture:',
+      name: 'picture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Postmortem lesiom`
+  String get post {
+    return Intl.message(
+      'Postmortem lesiom',
+      name: 'post',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temperature/humidity`
+  String get temp {
+    return Intl.message(
+      'Temperature/humidity',
+      name: 'temp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your animal temperature`
+  String get yourTemp {
+    return Intl.message(
+      'Enter your animal temperature',
+      name: 'yourTemp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lightening system`
+  String get light {
+    return Intl.message(
+      'Lightening system',
+      name: 'light',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `enter your farm lightening system`
+  String get yourLight {
+    return Intl.message(
+      'enter your farm lightening system',
+      name: 'yourLight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Air flow:`
+  String get airFlow {
+    return Intl.message(
+      'Air flow:',
+      name: 'airFlow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your farm air flow`
+  String get yourAir {
+    return Intl.message(
+      'Enter your farm air flow',
+      name: 'yourAir',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please enter a valid email`
   String get pleaseEmail {
     return Intl.message(
@@ -970,6 +2270,26 @@ class S {
     );
   }
 
+  /// `Confirm New Password must not be empty`
+  String get pleaseConfirmPssword {
+    return Intl.message(
+      'Confirm New Password must not be empty',
+      name: 'pleaseConfirmPssword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password must not be empty`
+  String get pleaseNewPssword {
+    return Intl.message(
+      'New Password must not be empty',
+      name: 'pleaseNewPssword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Name must not be empty`
   String get pleaseName {
     return Intl.message(
@@ -980,10 +2300,10 @@ class S {
     );
   }
 
-  /// `Owner must not be empty`
+  /// `Owner’s name must not be empty`
   String get pleaseOwner {
     return Intl.message(
-      'Owner must not be empty',
+      'Owner’s name must not be empty',
       name: 'pleaseOwner',
       desc: '',
       args: [],
@@ -1020,6 +2340,16 @@ class S {
     );
   }
 
+  /// `Animal height must not be empty`
+  String get pleaseAnHeight {
+    return Intl.message(
+      'Animal height must not be empty',
+      name: 'pleaseAnHeight',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Animal age must not be empty`
   String get pleaseAnAge {
     return Intl.message(
@@ -1030,11 +2360,151 @@ class S {
     );
   }
 
+  /// `Age must not be empty`
+  String get pleaseAge {
+    return Intl.message(
+      'Age must not be empty',
+      name: 'pleaseAge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farm Location must not be empty`
+  String get pleaseFarmLocation {
+    return Intl.message(
+      'Farm Location must not be empty',
+      name: 'pleaseFarmLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Location must not be empty`
   String get pleaseLocation {
     return Intl.message(
       'Location must not be empty',
       name: 'pleaseLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobidity must not be empty`
+  String get pleaseMobidity {
+    return Intl.message(
+      'Mobidity must not be empty',
+      name: 'pleaseMobidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mortality must not be empty`
+  String get pleaseMorality {
+    return Intl.message(
+      'Mortality must not be empty',
+      name: 'pleaseMorality',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Air flow must not be empty`
+  String get pleaseAir {
+    return Intl.message(
+      'Air flow must not be empty',
+      name: 'pleaseAir',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lightening system must not be empty`
+  String get pleaseLight {
+    return Intl.message(
+      'Lightening system must not be empty',
+      name: 'pleaseLight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temperature must not be empty`
+  String get pleaseTemp {
+    return Intl.message(
+      'Temperature must not be empty',
+      name: 'pleaseTemp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal name must not be empty`
+  String get pleaseAnName {
+    return Intl.message(
+      'Animal name must not be empty',
+      name: 'pleaseAnName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal ration must not be empty`
+  String get pleaseAnRation {
+    return Intl.message(
+      'Animal ration must not be empty',
+      name: 'pleaseAnRation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feed consumption must not be empty`
+  String get pleaseFeed {
+    return Intl.message(
+      'Feed consumption must not be empty',
+      name: 'pleaseFeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water consumption must not be empty`
+  String get pleaseWater {
+    return Intl.message(
+      'Water consumption must not be empty',
+      name: 'pleaseWater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Previous Medication must not be empty`
+  String get pleaseMedication {
+    return Intl.message(
+      'Previous Medication must not be empty',
+      name: 'pleaseMedication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farm capacity must not be empty`
+  String get pleaseFarmCapacity {
+    return Intl.message(
+      'Farm capacity must not be empty',
+      name: 'pleaseFarmCapacity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal symptoms must not be empty`
+  String get pleaseAnSymptoms {
+    return Intl.message(
+      'Animal symptoms must not be empty',
+      name: 'pleaseAnSymptoms',
       desc: '',
       args: [],
     );

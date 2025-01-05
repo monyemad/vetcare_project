@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vetcare_project/generated/l10n.dart';
 import 'package:vetcare_project/screens.dart/layout.dart/home_page.dart';
 
 class Message {
@@ -47,7 +48,7 @@ class _LiveChatState extends State<LiveChat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LIVE CHAT'),
+        title: Text(S.of(context).live),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context, MaterialPageRoute(builder: (context) {
@@ -114,9 +115,9 @@ class _LiveChatState extends State<LiveChat> {
                     Expanded(
                       child: TextField(
                         controller: _controller,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Type your message',
+                        decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
+                          hintText: S.of(context).yourMessage,
                         ),
                         maxLines: 1,
                       ),
@@ -124,7 +125,7 @@ class _LiveChatState extends State<LiveChat> {
                     const SizedBox(width: 8),
                     ElevatedButton(
                       onPressed: _handleSendMessage,
-                      child: const Text('Send'),
+                      child: Text(S.of(context).send),
                     ),
                   ],
                 ),
