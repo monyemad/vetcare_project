@@ -22,8 +22,6 @@ class CustomRadio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment:
-          isArabic() ? CrossAxisAlignment.start : CrossAxisAlignment.end,
       children: [
         Row(
           children: [
@@ -48,12 +46,12 @@ class CustomRadio extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              width: 5,
+              width: 10,
             ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(
-                    right: isArabic() ? 0 : 25, left: isArabic() ? 25 : 0),
+                    left: isArabic() ? 25 : 0, right: isArabic() ? 0 : 25),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),

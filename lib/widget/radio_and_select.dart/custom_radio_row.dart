@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CustomRadioRow extends StatelessWidget {
   final String text;
@@ -23,11 +24,11 @@ class CustomRadioRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          alignment: Alignment.topLeft,
-          padding: const EdgeInsets.only(left: 20),
+          alignment: isArabic() ? Alignment.topRight : Alignment.topLeft,
+          padding: EdgeInsets.only(
+              left: isArabic() ? 0 : 20, right: isArabic() ? 20 : 0),
           child: Text(
             text,
             style: const TextStyle(
@@ -42,7 +43,8 @@ class CustomRadioRow extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 25, right: 4),
+                padding: EdgeInsets.only(
+                    left: isArabic() ? 0 : 25, right: isArabic() ? 25 : 0),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -60,11 +62,12 @@ class CustomRadioRow extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              width: 5,
+              width: 10,
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(right: 25),
+                padding: EdgeInsets.only(
+                    left: isArabic() ? 25 : 0, right: isArabic() ? 0 : 25),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -86,4 +89,8 @@ class CustomRadioRow extends StatelessWidget {
       ],
     );
   }
+}
+
+bool isArabic() {
+  return Intl.getCurrentLocale() == "ar";
 }

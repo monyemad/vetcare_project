@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vetcare_project/generated/l10n.dart';
 
 class CustomPicture extends StatelessWidget {
   final VoidCallback onPressed1;
@@ -23,9 +24,9 @@ class CustomPicture extends StatelessWidget {
             ),
             child: TextButton(
                 onPressed: onPressed1,
-                child: const Text(
-                  "Import your image",
-                  style: TextStyle(fontSize: 16),
+                child: Text(
+                  S.of(context).antemortem,
+                  style: const TextStyle(fontSize: 16),
                 )),
           ),
           const SizedBox(
@@ -42,9 +43,9 @@ class CustomPicture extends StatelessWidget {
             ),
             child: TextButton(
                 onPressed: onPressed2,
-                child: const Text(
-                  "Postmortem lesiom",
-                  style: TextStyle(fontSize: 16),
+                child: Text(
+                  S.of(context).post,
+                  style: const TextStyle(fontSize: 16),
                 )),
           ),
         ],

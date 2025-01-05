@@ -1740,10 +1740,10 @@ class S {
     );
   }
 
-  /// `Animal gender`
+  /// `Animal gender:`
   String get animalGender {
     return Intl.message(
-      'Animal gender',
+      'Animal gender:',
       name: 'animalGender',
       desc: '',
       args: [],
@@ -1795,6 +1795,16 @@ class S {
     return Intl.message(
       'No',
       name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Antemortem`
+  String get antemortem {
+    return Intl.message(
+      'Antemortem',
+      name: 'antemortem',
       desc: '',
       args: [],
     );
@@ -2190,10 +2200,10 @@ class S {
     );
   }
 
-  /// `Temperature/humidity`
+  /// `Temperature/humidity:`
   String get temp {
     return Intl.message(
-      'Temperature/humidity',
+      'Temperature/humidity:',
       name: 'temp',
       desc: '',
       args: [],
@@ -2210,10 +2220,10 @@ class S {
     );
   }
 
-  /// `Lightening system`
+  /// `Lightening system:`
   String get light {
     return Intl.message(
-      'Lightening system',
+      'Lightening system:',
       name: 'light',
       desc: '',
       args: [],
