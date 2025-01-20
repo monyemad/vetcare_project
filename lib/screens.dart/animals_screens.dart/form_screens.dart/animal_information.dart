@@ -171,7 +171,8 @@ class _AnimalInformationScreenState extends State<AnimalInformationScreen> {
               children: [
                 Text(
                   S.of(context).animalInfo,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 15,

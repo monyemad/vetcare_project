@@ -26,10 +26,10 @@ class ClinicBooking extends StatefulWidget {
   const ClinicBooking({super.key});
 
   @override
-  State<ClinicBooking> createState() => _ClinicBooking2State();
+  State<ClinicBooking> createState() => _ClinicBookingState();
 }
 
-class _ClinicBooking2State extends State<ClinicBooking> {
+class _ClinicBookingState extends State<ClinicBooking> {
   final List<Clinic> _clinics = [
     Clinic(name: 'Clinic 1', times: [], bookings: []),
     Clinic(name: 'Clinic 2', times: [], bookings: []),

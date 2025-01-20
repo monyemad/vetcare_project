@@ -43,7 +43,7 @@ class AnimalScreen extends StatelessWidget {
                           return const HomeScreen();
                         }));
                       },
-                      icon: Icon(Icons.arrow_back_ios_new_rounded)),
+                      icon: const Icon(Icons.arrow_back_ios_new_rounded)),
                 ),
                 const SizedBox(
                   height: 10,
